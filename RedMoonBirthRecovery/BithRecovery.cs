@@ -11,6 +11,9 @@ using System.Threading;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Collections;
+using RedMoonBirthRecovery.FormModel;
+using System.Threading.Tasks;
+
 namespace RedMoonBirthRecovery
 {
     public partial class BithRecovery : Form
@@ -19,104 +22,104 @@ namespace RedMoonBirthRecovery
         {
             InitializeComponent();
         }
-        private CookieContainer cc = new CookieContainer();
-        /// <summary>
-        /// post
-        /// </summary>
-        /// <param name="url">登录的url</param>
-        /// <param name="data">登录url的参数.可用http工具获取.　</param>
-        /// <param name="refe">登录后的网站地址.</param>
-        /// <returns></returns>
-        private string post(string url, string data, string refe)
+        public CrackTaskModel crackTask = null;
+        private async void btnPost_Click(object sender, EventArgs e)
         {
-            string result = string.Empty;
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "POST";
-            request.ContentType = "application/x-www-form-urlencoded";
-            request.CookieContainer = this.cc;
-            request.ContentLength = data.Length;
-            request.Referer = refe;
-            using (StreamWriter writer = new StreamWriter(request.GetRequestStream(), Encoding.Default))
-            {
-                writer.Write(data);
-                writer.Flush();
-            }
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-            {
-                StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
-                result = reader.ReadToEnd();
-            }
-            request = null;
-            return result;
-        }
-        private Thread thread = null;
-        private List<string> datelist = null;
-        private void btnPost_Click(object sender, EventArgs e)
-        {
-            DateTime  start=DateTime.Parse("1900/01/01");
+            DateTime start = DateTime.Parse("1900/01/01");
             DateTime end = DateTime.Parse("1900/01/01");
-            bool isok=DateTime.TryParse(dtpBeginDay.Text, out start) && DateTime.TryParse(dtpEndDay.Text, out end);
-
-            if (isok&&end>=start)
-	        {
+            bool isok = DateTime.TryParse(dtpBeginDay.Text, out start) && DateTime.TryParse(dtpEndDay.Text, out end);
+            if (isok && end >= start)
+            {
                 this.btnPost.Enabled = false;
                 //生成破解日期
                 MakeBirth(dtpBeginDay.Text, dtpEndDay.Text);
-                thread = new Thread(new ThreadStart(CrossThreadFlush));
-                thread.IsBackground = true;
-                thread.Start();
+                if (crackTask != null && crackTask.creakRequests.Count > 0)
+                {
+                    await CrackLoop();
+                }
             }
             else
             {
                 MessageBox.Show("截至日期需要大于起始日期");
             }
- 
-
+        }
+        /// <summary>
+        /// 暂停和恢复
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void btnStop_Click(object sender, EventArgs e)
+        {
+            if (btnStop.Text == "暂停")
+            {
+                stopCrack();
+                btnStop.Text = "继续";
+            }
+            else if (btnStop.Text == "继续")
+            {
+                if (crackTask != null && crackTask.creakRequests.Count > 0)
+                {
+                    btnStop.Text = "暂停";
+                    crackTask.state = false;
+                    await CrackLoop();
+                }
+            }
+            btnPost.Enabled = false;
 
         }
-        private void btnStop_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 暂停队列
+        /// </summary>
+        public void stopCrack()
         {
-            if (thread != null)
+            if (crackTask != null && crackTask.creakRequests.Count > 0)
             {
-                thread.Abort();
-                this.btnPost.Enabled = true;
+                crackTask.state = true;
             }
         }
-        private void CrossThreadFlush()
-        {
- 
-            CrackLoop(); 
- 
-        }
-        private delegate void FlushClient();//代理
         /// <summary>
-        /// 剩余时间
+        /// 重置队列
         /// </summary>
-        private TimeSpan surplus = new TimeSpan();
-        public void CrackLoop()
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnReset_Click(object sender, EventArgs e)
         {
-            if (lblStatus.InvokeRequired)
+            stopCrack();
+            crackTask = null;
+            btnStop.Text = "暂停";
+            btnPost.Enabled = true;
+
+        }
+
+
+
+        public async Task CrackLoop()
+        {
+            if (crackTask != null)
             {
-                foreach (string item in datelist)
+                for (; crackTask.currentIndex < crackTask.creakRequests.Count; crackTask.currentIndex++)
                 {
-
-                    surplus = DateTime.Parse(dtpEndDay.Text) - DateTime.Parse(item);
-                    lblStatus.Text = "当前" + item + "\t 已经尝试了" + (datelist.Count - surplus.Days) + "次/还剩" + (datelist.Count - (datelist.Count - surplus.Days));
-                    FlushClient fc = new FlushClient(CrackLoop);
-                    this.Invoke(fc);
-                    if (CrackBirth(item))
+                    if (crackTask.state)
                     {
-
-                        MessageBox.Show(item);
-
                         break;
                     }
+                    var task = crackTask.creakRequests[crackTask.currentIndex];
+                    int shengyu = crackTask.creakRequests.Count - 1 - crackTask.currentIndex;
+                    lblStatus.Text = "当前" + task.CreckDate.ToString("yyyy-MM-dd") + "\t 已经尝试了" + (crackTask.currentIndex) + "次/还剩" + shengyu;
+                    bool isok = await CrackBirth(task); 
+                    if (isok)
+                    {
+                        lblStatus.Text = "正确生日是：" + task.CreckDate.ToString("yyyy-MM-dd");
+                        break;
+                    }
+                    if (shengyu==0)
+                    {
+                        lblStatus.Text = "很遗憾没有为你找到账号的生日";
+                    }
                 }
-                this.btnPost.Enabled = true;
-
             }
-
         }
+
 
 
 
@@ -128,25 +131,31 @@ namespace RedMoonBirthRecovery
         /// <returns></returns>
         public void MakeBirth(string beginBirth, string endbirth)
         {
-            DateTime bdate = DateTime.Parse(beginBirth);
-            DateTime edate = DateTime.Parse(endbirth);
-            TimeSpan minusdays = edate - bdate;
-            int count = minusdays.Days;
-            List<string> listdate = new List<string>();
-            for (int i = 0; i <= count; i++)
+            DateTime bdate = new DateTime();
+            DateTime edate = new DateTime();
+            bool isConverted = DateTime.TryParse(beginBirth, out bdate) && DateTime.TryParse(endbirth, out edate);
+            if (isConverted)
             {
-                listdate.Add(bdate.AddDays(i).ToShortDateString());
+                crackTask = new CrackTaskModel { beginDate = bdate, endDate = edate, currentIndex = 0, state = false };
+                crackTask.creakRequests = new List<CrackBirthdayModel>();
+                TimeSpan minusdays = edate - bdate;
+                for (int i = 0; i <= minusdays.Days; i++)
+                {
+                    var birth = bdate.AddDays(i);
+                    crackTask.creakRequests.Add(new CrackBirthdayModel
+                    {
+                        account = txtaccount.Text,
+                        password = txtPass.Text,
+                        month = birth.Month,
+                        day = birth.ToString("dd"),
+                        year = birth.Year,
+                        CreckDate = birth
+                    });
+                }
             }
-            datelist = listdate;
         }
-        /// <summary>
-        /// post提交的参数
-        /// </summary>
-        private string name = string.Empty;
-        /// <summary>
-        /// 要访问的页面
-        /// </summary>
-        private readonly string url = "http://support.redmoonclassic.com/index.php";
+
+
         /// <summary>
         /// 返回结果
         /// </summary>
@@ -156,31 +165,28 @@ namespace RedMoonBirthRecovery
         /// 尝试猜解请求
         /// </summary>
         /// <param name="date">日期</param>
-        public bool CrackBirth(string date)
+        public async Task<bool> CrackBirth(CrackBirthdayModel crackBirth)
         {
             bool ResponseResult = false;
-            DateTime bitrh = DateTime.Parse(date);
-            name = "account=" + txtaccount.Text + "&password=" + txtPass.Text + "&month=" + bitrh.Month + "&day=" + bitrh.ToString("dd") + "&year=" + bitrh.Year + "&submit=Submit";
-            string result = post(url, name, url);
-            if (result.Contains("Login"))
-            {
-                ResponseResult = false;
-            }
-            else if (result.Contains("Welcome"))
-            {
+            return await Task.Run<bool>(async () =>
+             {
+                 string result = await HttpHelper.PostAsync<CrackBirthdayModel>(RedmoonUri.crackBirthday, crackBirth, RedmoonUri.crackBirthday);
+                 if (result.Contains("Login"))
+                 {
+                     ResponseResult = false;
+                 }
+                 else if (result.Contains("Welcome"))
+                 {
 
-                ResponseResult = true;
-            }
-            result = string.Empty;
-            name = string.Empty;
-            return ResponseResult;
+                     ResponseResult = true;
+                 }
+                 result = string.Empty;
+                 return ResponseResult;
+             });
         }
 
         #region 注册游戏帐号
-        /// <summary>
-        /// 注册帐号的url
-        /// </summary>
-        private readonly string addUserUrl = "http://www.redmoonclassic.com/beta/add.php";
+
         /// <summary>
         /// 注册游戏帐号
         /// </summary>
@@ -190,9 +196,24 @@ namespace RedMoonBirthRecovery
         {
 
             DateTime bitrh = DateTime.Parse(txtBirthday.Text);
-            string name = "loginID=" + txtloginID.Text + "&Password=" + txtPassword.Text + "&Password2=" + txtPassword2.Text + "&month=" + bitrh.Month + "&day=" + bitrh.ToString("dd") + "&year=" + bitrh.Year + "&email=" + txtemail.Text + "&question=" + txtquestion.Text + "&answer=" + txtanswer.Text + "&Create=Create";
-            name = name.Replace("@", "%40");
-            string result = post(addUserUrl, name, url);
+
+            UserAddModel user = new UserAddModel
+            {
+                loginID = txtloginID.Text,
+                Password = txtPassword.Text,
+                Password2 = txtPassword2.Text,
+                answer = txtanswer.Text,
+                email = txtemail.Text.Replace("@", "%40"),
+                question = txtquestion.Text,
+                month = bitrh.Month,
+                day = bitrh.ToString("dd"),
+                year = bitrh.Year
+            };
+            //string name = "loginID=" + txtloginID.Text + "&Password=" + txtPassword.Text + "&Password2=" + txtPassword2.Text +
+            //    "&month=" + bitrh.Month + "&day=" + bitrh.ToString("dd") + "&year=" + bitrh.Year + "&email=" + txtemail.Text +
+            //    "&question=" + txtquestion.Text + "&answer=" + txtanswer.Text + "&Create=Create"; 
+            //name = name.Replace("@", "%40");
+            string result = HttpHelper.Post<UserAddModel>(RedmoonUri.userRegist, user, RedmoonUri.userRegist);
             if (result.Contains("You're account has been created"))
             {
                 MessageBox.Show("帐号注册成功");
@@ -206,12 +227,21 @@ namespace RedMoonBirthRecovery
         #endregion
 
         #region 变身
-        private readonly string shapeshit = "http://www.redmoonclassic.com/beta/shapeshift/";
+
 
         private void btnChangeSkin_Click(object sender, EventArgs e)
         {
-            string name = "Username=" + txtUsername.Text + "&BillID=" + txtBillID.Text + "&Password=" + txtBillPassword.Text + "&face=" + cbface.SelectedIndex + "&Fame=" + (cbFame.SelectedIndex == 1 ? 1000 : -1000) + "&ChangeSkin=Change+Skin";
-            string result = post(shapeshit, name, shapeshit);
+            // string name = "Username=" + txtUsername.Text + "&BillID=" + txtBillID.Text + "&Password=" + txtBillPassword.Text + "&face=" + cbface.SelectedIndex + "&Fame=" + (cbFame.SelectedIndex == 1 ? 1000 : -1000) + "&ChangeSkin=Change+Skin";
+
+            ShapeShitModel shape = new ShapeShitModel
+            {
+                BillID = txtBillID.Text,
+                face = cbface.SelectedIndex,
+                Fame = (cbFame.SelectedIndex == 1 ? 1000 : -1000),
+                Password = txtBillPassword.Text,
+                Username = txtUsername.Text
+            };
+            string result = HttpHelper.Post<ShapeShitModel>(RedmoonUri.shapeshit, shape, RedmoonUri.shapeshit);
             if (result.Contains("This event is currently NOT running"))
             {
                 MessageBox.Show("活动未开放");
@@ -233,35 +263,6 @@ namespace RedMoonBirthRecovery
         }
         #endregion
 
-        /// <summary>
-        /// post
-        /// </summary>
-        /// <param name="url">登录的url</param>
-        /// <param name="data">登录url的参数.可用http工具获取.　</param>
-        /// <param name="refe">登录后的网站地址.</param>
-        /// <returns></returns>
-        private Bitmap getVerifyPic(string url, string data, string refe)
-        {
-            Bitmap result = null;
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "POST";
-            request.ContentType = "application/x-www-form-urlencoded";
-            request.CookieContainer = this.cc;
-            request.ContentLength = data.Length;
-            request.Referer = refe;
-            using (StreamWriter writer = new StreamWriter(request.GetRequestStream(), Encoding.Default))
-            {
-                writer.Write(data);
-                writer.Flush();
-            }
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-            {
-                Stream reader = response.GetResponseStream();
-                result = new Bitmap(reader, false);
-            }
-
-            return result;
-        }
 
 
         #region 关于
@@ -294,7 +295,7 @@ namespace RedMoonBirthRecovery
         /// <param name="e"></param>
         private void lkClient_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("iexplore.exe", "http://www.redmoonclassic.com/downloads/RM601.exe");
+            Process.Start("iexplore.exe", RedmoonUri.DownLoadMainProgramUrl);
         }
         /// <summary>
         /// 补丁1
@@ -303,7 +304,7 @@ namespace RedMoonBirthRecovery
         /// <param name="e"></param>
         private void lbPatch1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("iexplore.exe", "http://www.redmoonclassic.com/downloads/601t602.exe");
+            Process.Start("iexplore.exe", RedmoonUri.DownLoadPatchFirstUrl);
         }
         /// <summary>
         /// 补丁2
@@ -312,7 +313,7 @@ namespace RedMoonBirthRecovery
         /// <param name="e"></param>
         private void lkPatch2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("iexplore.exe", "http://www.redmoonclassic.com/downloads/602t603.exe");
+            Process.Start("iexplore.exe", RedmoonUri.DownLoadPathcSecondUrl);
         }
         #endregion
 
@@ -337,10 +338,6 @@ namespace RedMoonBirthRecovery
             }
 
         }
-
- 
-
-
 
     }
 }
