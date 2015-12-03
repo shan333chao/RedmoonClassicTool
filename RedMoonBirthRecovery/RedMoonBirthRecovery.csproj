@@ -64,6 +64,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -79,6 +80,8 @@
     </Compile>
     <Compile Include="FormModel\CrackBirthdayModel.cs" />
     <Compile Include="FormModel\CrackTaskModel.cs" />
+    <Compile Include="FormModel\PasswordRecoveryModel.cs" />
+    <Compile Include="FormModel\RecoveryGameAccountModel.cs" />
     <Compile Include="FormModel\ShapeShitModel.cs" />
     <Compile Include="FormModel\UserAddModel.cs" />
     <Compile Include="HttpHelper.cs" />
@@ -86,12 +89,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RedmoonUri.cs" />
+    <Compile Include="ValidationHelper.cs" />
     <EmbeddedResource Include="BithRecovery.resx">
       <DependentUpon>BithRecovery.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon_1.ico" />
+    <Content Include="ScreenShot\1首页.png" />
+    <Content Include="ScreenShot\2注册.png" />
+    <Content Include="ScreenShot\3破解.png" />
+    <Content Include="ScreenShot\找到.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

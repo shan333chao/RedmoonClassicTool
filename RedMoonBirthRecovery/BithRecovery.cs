@@ -13,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Collections;
 using RedMoonBirthRecovery.FormModel;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace RedMoonBirthRecovery
 {
@@ -22,7 +23,15 @@ namespace RedMoonBirthRecovery
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// 提交数据队列
+        /// </summary>
         public CrackTaskModel crackTask = null;
+        /// <summary>
+        /// 开始按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void btnPost_Click(object sender, EventArgs e)
         {
             DateTime start = DateTime.Parse("1900/01/01");
@@ -74,6 +83,7 @@ namespace RedMoonBirthRecovery
         {
             if (crackTask != null && crackTask.creakRequests.Count > 0)
             {
+                //暂停提交
                 crackTask.state = true;
             }
         }
@@ -92,13 +102,17 @@ namespace RedMoonBirthRecovery
         }
 
 
-
+        /// <summary>
+        /// 异步请求
+        /// </summary>
+        /// <returns></returns>
         public async Task CrackLoop()
         {
             if (crackTask != null)
             {
                 for (; crackTask.currentIndex < crackTask.creakRequests.Count; crackTask.currentIndex++)
                 {
+                    ///如果状态变了，停止循环
                     if (crackTask.state)
                     {
                         break;
@@ -106,13 +120,13 @@ namespace RedMoonBirthRecovery
                     var task = crackTask.creakRequests[crackTask.currentIndex];
                     int shengyu = crackTask.creakRequests.Count - 1 - crackTask.currentIndex;
                     lblStatus.Text = "当前" + task.CreckDate.ToString("yyyy-MM-dd") + "\t 已经尝试了" + (crackTask.currentIndex) + "次/还剩" + shengyu;
-                    bool isok = await CrackBirth(task); 
+                    bool isok = await CrackBirth(task);
                     if (isok)
                     {
                         lblStatus.Text = "正确生日是：" + task.CreckDate.ToString("yyyy-MM-dd");
                         break;
                     }
-                    if (shengyu==0)
+                    if (shengyu == 0)
                     {
                         lblStatus.Text = "很遗憾没有为你找到账号的生日";
                     }
@@ -136,6 +150,7 @@ namespace RedMoonBirthRecovery
             bool isConverted = DateTime.TryParse(beginBirth, out bdate) && DateTime.TryParse(endbirth, out edate);
             if (isConverted)
             {
+                ///构造所有请求生日的数据
                 crackTask = new CrackTaskModel { beginDate = bdate, endDate = edate, currentIndex = 0, state = false };
                 crackTask.creakRequests = new List<CrackBirthdayModel>();
                 TimeSpan minusdays = edate - bdate;
@@ -156,20 +171,19 @@ namespace RedMoonBirthRecovery
         }
 
 
-        /// <summary>
-        /// 返回结果
-        /// </summary>
-        private string responseResult = string.Empty;
+
 
         /// <summary>
-        /// 尝试猜解请求
+        /// 尝试猜解生日
         /// </summary>
-        /// <param name="date">日期</param>
+        /// <param name="crackBirth">生日请求对象</param>
+        /// <returns></returns>
         public async Task<bool> CrackBirth(CrackBirthdayModel crackBirth)
         {
             bool ResponseResult = false;
             return await Task.Run<bool>(async () =>
              {
+                 ///等待提交返回结果
                  string result = await HttpHelper.PostAsync<CrackBirthdayModel>(RedmoonUri.crackBirthday, crackBirth, RedmoonUri.crackBirthday);
                  if (result.Contains("Login"))
                  {
@@ -338,6 +352,86 @@ namespace RedMoonBirthRecovery
             }
 
         }
+        /// <summary>
+        /// 找回密码
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void btnRecoveryPass_Click(object sender, EventArgs e)
+        {
+            PasswordRecoveryModel recoveryModel = new PasswordRecoveryModel
+            {
+                billid = txtRecoveryBillingId.Text,
+                email = txtRecoveryEmail.Text
+            };
+            lblRecoveryMsgStatus.Text = "";
+            ///验证输入内容是否正确
+            IList<ValidateMsgModel> errMsglist = new List<ValidateMsgModel>();
+            string result = string.Empty;
 
+            if (ValidationHelper.validateModel<PasswordRecoveryModel>(recoveryModel, out errMsglist))
+            {
+                recoveryModel.email = recoveryModel.email.Replace("@", "%40");
+                result = await HttpHelper.PostAsync<PasswordRecoveryModel>(RedmoonUri.PasswordRecovery, recoveryModel, RedmoonUri.PasswordRecovery);
+          
+                string errorEmail = "--Incorrect Information--"; 
+                if (result.Contains(txtRecoveryEmail.Text))
+                {
+                    lblRecoveryMsgStatus.Text = string.Format("请去你的邮箱:{0},查收你帐号的密码",txtRecoveryEmail.Text);
+                    MessageBox.Show(string.Format("您的密码已发送到邮箱：{0}", recoveryModel.email),"恭喜您", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } else if (result.Contains(errorEmail)) {
+
+                    MessageBox.Show(string.Format("您输入的账号或邮箱不匹配！"));
+                }
+            }
+            else
+            {
+                var errorResult = string.Empty;
+                foreach (var item in errMsglist)
+                {
+                    errorResult += item.errMsg + "\r\n";
+                }
+                MessageBox.Show(errorResult, "输入错误",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private async void btnFindMyGameAccount_Click(object sender, EventArgs e)
+        {
+            lblAccountRecoveryStatusMsg.Text = "";
+           RecoveryGameAccountModel recoveryModel = new RecoveryGameAccountModel
+            {
+                email = txtRecoveryAccountEmail.Text
+            };
+
+            ///验证输入内容是否正确
+            IList<ValidateMsgModel> errMsglist = new List<ValidateMsgModel>();
+            string result = string.Empty;
+
+            if (ValidationHelper.validateModel<RecoveryGameAccountModel>(recoveryModel, out errMsglist))
+            {
+                recoveryModel.email = recoveryModel.email.Replace("@", "%40");
+                result = await HttpHelper.PostAsync<RecoveryGameAccountModel>(RedmoonUri.GameAccountRecovery, recoveryModel, RedmoonUri.GameAccountRecovery);
+
+                string errorEmail = "we have no accounts for the email address";
+                if (result.Contains("An email has been sent to"))//success
+                {
+                    lblAccountRecoveryStatusMsg.Text = string.Format("请去你的邮箱:{0},请去你的邮箱查看你帐号信息", txtRecoveryAccountEmail.Text);
+                    MessageBox.Show(string.Format("您的密码已发送到邮箱：{0}", txtRecoveryAccountEmail.Text), "恭喜您", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (result.Contains(errorEmail))
+                { 
+                    MessageBox.Show(string.Format("没有找到任何使用{0}邮箱注册的账号！",txtRecoveryAccountEmail.Text));
+                }
+            }
+            else
+            {
+                var errorResult = string.Empty;
+                foreach (var item in errMsglist)
+                {
+                    errorResult += item.errMsg + "\r\n";
+                }
+                MessageBox.Show(errorResult, "输入错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace RedMoonBirthRecovery
     {
 
         /// <summary>
-        /// post
+        /// post 提交非异步
         /// </summary>
         /// <param name="url">登录的url</param>
         /// <param name="data">登录url的参数.可用http工具获取.　</param>
@@ -52,7 +52,14 @@ namespace RedMoonBirthRecovery
             }
             return result;
         }
-
+        /// <summary>
+        /// Post 提交数据
+        /// </summary>
+        /// <typeparam name="T">需要转换参数的类</typeparam>
+        /// <param name="url">请求URL地址</param>
+        /// <param name="data">要提交的数据</param>
+        /// <param name="refe">Referer 前一个页面的地址</param>
+        /// <returns></returns>
         public static Task<string> PostAsync<T>(string url, T data, string refe)
         {
             string result = string.Empty;
@@ -60,7 +67,6 @@ namespace RedMoonBirthRecovery
             {
                 try
                 {
-
                     string postData = BuildRequestBody(data);
                     CookieContainer cc = new CookieContainer();
                     HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -80,7 +86,6 @@ namespace RedMoonBirthRecovery
                         StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
                         result = reader.ReadToEnd();
                     }
-
                 }
                 catch (Exception ex)
                 {
@@ -91,7 +96,12 @@ namespace RedMoonBirthRecovery
             });
 
         }
-
+        /// <summary>
+        /// 通过将传入的对象转换为request 提交的参数
+        /// </summary>
+        /// <typeparam name="T">对象类型</typeparam>
+        /// <param name="t">传入的对象</param>
+        /// <returns></returns>
         public static string BuildRequestBody<T>(T t)
         {
             string result = string.Empty;

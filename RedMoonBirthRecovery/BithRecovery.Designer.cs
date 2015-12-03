@@ -71,6 +71,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbGetBirth = new System.Windows.Forms.TabPage();
+            this.btnReset = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.lblBDate = new System.Windows.Forms.Label();
@@ -91,18 +92,35 @@
             this.txtBillPassword = new System.Windows.Forms.TextBox();
             this.txtBillID = new System.Windows.Forms.TextBox();
             this.btnChangeSkin = new System.Windows.Forms.Button();
+            this.tbFindGameAccount = new System.Windows.Forms.TabPage();
+            this.btnRecoveryPass = new System.Windows.Forms.Button();
+            this.txtRecoveryEmail = new System.Windows.Forms.TextBox();
+            this.txtRecoveryBillingId = new System.Windows.Forms.TextBox();
+            this.lblRecoveryAccount = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.tbFindGamePassword = new System.Windows.Forms.TabPage();
             this.tbFeedBack = new System.Windows.Forms.TabPage();
             this.txtContent = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.lblRecoveryMsgStatus = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.btnFindMyGameAccount = new System.Windows.Forms.Button();
+            this.txtRecoveryAccountEmail = new System.Windows.Forms.TextBox();
+            this.lblAccountRecoveryStatusMsg = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.tbRedmoonTools.SuspendLayout();
             this.tbabout.SuspendLayout();
             this.tbAdd.SuspendLayout();
             this.tbGetBirth.SuspendLayout();
             this.tbShapeshit.SuspendLayout();
+            this.tbFindGameAccount.SuspendLayout();
+            this.tbFindGamePassword.SuspendLayout();
             this.tbFeedBack.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,7 +130,7 @@
             this.btnPost.Location = new System.Drawing.Point(77, 192);
             this.btnPost.Name = "btnPost";
             this.btnPost.Size = new System.Drawing.Size(75, 21);
-            this.btnPost.TabIndex = 0;
+            this.btnPost.TabIndex = 5;
             this.btnPost.Text = "开始";
             this.btnPost.UseVisualStyleBackColor = true;
             this.btnPost.Click += new System.EventHandler(this.btnPost_Click);
@@ -177,11 +195,13 @@
             this.tbRedmoonTools.Controls.Add(this.tbAdd);
             this.tbRedmoonTools.Controls.Add(this.tbGetBirth);
             this.tbRedmoonTools.Controls.Add(this.tbShapeshit);
+            this.tbRedmoonTools.Controls.Add(this.tbFindGameAccount);
+            this.tbRedmoonTools.Controls.Add(this.tbFindGamePassword);
             this.tbRedmoonTools.Controls.Add(this.tbFeedBack);
             this.tbRedmoonTools.Location = new System.Drawing.Point(1, 1);
             this.tbRedmoonTools.Name = "tbRedmoonTools";
             this.tbRedmoonTools.SelectedIndex = 0;
-            this.tbRedmoonTools.Size = new System.Drawing.Size(459, 314);
+            this.tbRedmoonTools.Size = new System.Drawing.Size(486, 314);
             this.tbRedmoonTools.TabIndex = 6;
             this.tbRedmoonTools.SelectedIndexChanged += new System.EventHandler(this.tbRedmoonTools_SelectedIndexChanged);
             // 
@@ -206,7 +226,7 @@
             this.tbabout.Location = new System.Drawing.Point(4, 22);
             this.tbabout.Name = "tbabout";
             this.tbabout.Padding = new System.Windows.Forms.Padding(3);
-            this.tbabout.Size = new System.Drawing.Size(451, 288);
+            this.tbabout.Size = new System.Drawing.Size(478, 288);
             this.tbabout.TabIndex = 5;
             this.tbabout.Text = "帮助";
             // 
@@ -398,7 +418,7 @@
             this.tbAdd.Location = new System.Drawing.Point(4, 22);
             this.tbAdd.Name = "tbAdd";
             this.tbAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.tbAdd.Size = new System.Drawing.Size(451, 288);
+            this.tbAdd.Size = new System.Drawing.Size(478, 288);
             this.tbAdd.TabIndex = 1;
             this.tbAdd.Text = "游戏帐号注册";
             // 
@@ -429,7 +449,7 @@
             this.btnRegUser.Location = new System.Drawing.Point(109, 251);
             this.btnRegUser.Name = "btnRegUser";
             this.btnRegUser.Size = new System.Drawing.Size(75, 21);
-            this.btnRegUser.TabIndex = 31;
+            this.btnRegUser.TabIndex = 30;
             this.btnRegUser.Text = "注册";
             this.btnRegUser.UseVisualStyleBackColor = true;
             this.btnRegUser.Click += new System.EventHandler(this.btnRegUser_Click);
@@ -441,7 +461,7 @@
             this.txtBirthday.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.txtBirthday.Name = "txtBirthday";
             this.txtBirthday.Size = new System.Drawing.Size(200, 21);
-            this.txtBirthday.TabIndex = 30;
+            this.txtBirthday.TabIndex = 26;
             this.txtBirthday.Value = new System.DateTime(1989, 1, 12, 0, 0, 0, 0);
             // 
             // txtanswer
@@ -482,7 +502,7 @@
             this.txtquestion.Location = new System.Drawing.Point(89, 187);
             this.txtquestion.Name = "txtquestion";
             this.txtquestion.Size = new System.Drawing.Size(213, 21);
-            this.txtquestion.TabIndex = 26;
+            this.txtquestion.TabIndex = 28;
             // 
             // txtPassword
             // 
@@ -493,7 +513,7 @@
             this.txtPassword.MaxLength = 10;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(213, 21);
-            this.txtPassword.TabIndex = 25;
+            this.txtPassword.TabIndex = 24;
             // 
             // txtPassword2
             // 
@@ -504,7 +524,7 @@
             this.txtPassword2.MaxLength = 10;
             this.txtPassword2.Name = "txtPassword2";
             this.txtPassword2.Size = new System.Drawing.Size(213, 21);
-            this.txtPassword2.TabIndex = 24;
+            this.txtPassword2.TabIndex = 25;
             // 
             // txtloginID
             // 
@@ -596,9 +616,19 @@
             this.tbGetBirth.Location = new System.Drawing.Point(4, 22);
             this.tbGetBirth.Name = "tbGetBirth";
             this.tbGetBirth.Padding = new System.Windows.Forms.Padding(3);
-            this.tbGetBirth.Size = new System.Drawing.Size(451, 288);
+            this.tbGetBirth.Size = new System.Drawing.Size(478, 288);
             this.tbGetBirth.TabIndex = 0;
             this.tbGetBirth.Text = "生日找回";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(240, 192);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 7;
+            this.btnReset.Text = "重置";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnStop
             // 
@@ -606,7 +636,7 @@
             this.btnStop.Location = new System.Drawing.Point(158, 192);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 21);
-            this.btnStop.TabIndex = 11;
+            this.btnStop.TabIndex = 6;
             this.btnStop.Text = "暂停";
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
@@ -681,7 +711,7 @@
             this.tbShapeshit.Location = new System.Drawing.Point(4, 22);
             this.tbShapeshit.Name = "tbShapeshit";
             this.tbShapeshit.Padding = new System.Windows.Forms.Padding(3);
-            this.tbShapeshit.Size = new System.Drawing.Size(451, 288);
+            this.tbShapeshit.Size = new System.Drawing.Size(478, 288);
             this.tbShapeshit.TabIndex = 3;
             this.tbShapeshit.Text = "变身(活动中使用)";
             // 
@@ -716,7 +746,7 @@
             this.cbFame.Location = new System.Drawing.Point(61, 162);
             this.cbFame.Name = "cbFame";
             this.cbFame.Size = new System.Drawing.Size(240, 20);
-            this.cbFame.TabIndex = 12;
+            this.cbFame.TabIndex = 14;
             // 
             // cbface
             // 
@@ -736,7 +766,7 @@
             this.cbface.Location = new System.Drawing.Point(61, 137);
             this.cbface.Name = "cbface";
             this.cbface.Size = new System.Drawing.Size(240, 20);
-            this.cbface.TabIndex = 11;
+            this.cbface.TabIndex = 13;
             // 
             // txtUsername
             // 
@@ -809,7 +839,7 @@
             this.txtBillPassword.Name = "txtBillPassword";
             this.txtBillPassword.PasswordChar = '*';
             this.txtBillPassword.Size = new System.Drawing.Size(240, 21);
-            this.txtBillPassword.TabIndex = 2;
+            this.txtBillPassword.TabIndex = 12;
             // 
             // txtBillID
             // 
@@ -820,7 +850,7 @@
             this.txtBillID.MaxLength = 12;
             this.txtBillID.Name = "txtBillID";
             this.txtBillID.Size = new System.Drawing.Size(240, 21);
-            this.txtBillID.TabIndex = 1;
+            this.txtBillID.TabIndex = 11;
             // 
             // btnChangeSkin
             // 
@@ -828,10 +858,98 @@
             this.btnChangeSkin.Location = new System.Drawing.Point(70, 201);
             this.btnChangeSkin.Name = "btnChangeSkin";
             this.btnChangeSkin.Size = new System.Drawing.Size(75, 23);
-            this.btnChangeSkin.TabIndex = 0;
+            this.btnChangeSkin.TabIndex = 15;
             this.btnChangeSkin.Text = "变身";
             this.btnChangeSkin.UseVisualStyleBackColor = true;
             this.btnChangeSkin.Click += new System.EventHandler(this.btnChangeSkin_Click);
+            // 
+            // tbFindGameAccount
+            // 
+            this.tbFindGameAccount.BackColor = System.Drawing.Color.SteelBlue;
+            this.tbFindGameAccount.Controls.Add(this.label30);
+            this.tbFindGameAccount.Controls.Add(this.label31);
+            this.tbFindGameAccount.Controls.Add(this.lblRecoveryMsgStatus);
+            this.tbFindGameAccount.Controls.Add(this.btnRecoveryPass);
+            this.tbFindGameAccount.Controls.Add(this.txtRecoveryEmail);
+            this.tbFindGameAccount.Controls.Add(this.txtRecoveryBillingId);
+            this.tbFindGameAccount.Controls.Add(this.lblRecoveryAccount);
+            this.tbFindGameAccount.Controls.Add(this.lblEmail);
+            this.tbFindGameAccount.Location = new System.Drawing.Point(4, 22);
+            this.tbFindGameAccount.Name = "tbFindGameAccount";
+            this.tbFindGameAccount.Padding = new System.Windows.Forms.Padding(3);
+            this.tbFindGameAccount.Size = new System.Drawing.Size(478, 288);
+            this.tbFindGameAccount.TabIndex = 7;
+            this.tbFindGameAccount.Text = "找回密码";
+            // 
+            // btnRecoveryPass
+            // 
+            this.btnRecoveryPass.Location = new System.Drawing.Point(342, 207);
+            this.btnRecoveryPass.Name = "btnRecoveryPass";
+            this.btnRecoveryPass.Size = new System.Drawing.Size(102, 23);
+            this.btnRecoveryPass.TabIndex = 13;
+            this.btnRecoveryPass.Text = "寻找游戏密码";
+            this.btnRecoveryPass.UseVisualStyleBackColor = true;
+            this.btnRecoveryPass.Click += new System.EventHandler(this.btnRecoveryPass_Click);
+            // 
+            // txtRecoveryEmail
+            // 
+            this.txtRecoveryEmail.AcceptsTab = true;
+            this.txtRecoveryEmail.BackColor = System.Drawing.Color.YellowGreen;
+            this.txtRecoveryEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRecoveryEmail.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.txtRecoveryEmail.Location = new System.Drawing.Point(204, 137);
+            this.txtRecoveryEmail.MaxLength = 40;
+            this.txtRecoveryEmail.Name = "txtRecoveryEmail";
+            this.txtRecoveryEmail.Size = new System.Drawing.Size(240, 21);
+            this.txtRecoveryEmail.TabIndex = 11;
+            // 
+            // txtRecoveryBillingId
+            // 
+            this.txtRecoveryBillingId.AcceptsTab = true;
+            this.txtRecoveryBillingId.BackColor = System.Drawing.Color.YellowGreen;
+            this.txtRecoveryBillingId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRecoveryBillingId.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.txtRecoveryBillingId.Location = new System.Drawing.Point(204, 163);
+            this.txtRecoveryBillingId.MaxLength = 13;
+            this.txtRecoveryBillingId.Name = "txtRecoveryBillingId";
+            this.txtRecoveryBillingId.Size = new System.Drawing.Size(240, 21);
+            this.txtRecoveryBillingId.TabIndex = 12;
+            // 
+            // lblRecoveryAccount
+            // 
+            this.lblRecoveryAccount.AutoSize = true;
+            this.lblRecoveryAccount.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblRecoveryAccount.Location = new System.Drawing.Point(117, 163);
+            this.lblRecoveryAccount.Name = "lblRecoveryAccount";
+            this.lblRecoveryAccount.Size = new System.Drawing.Size(77, 14);
+            this.lblRecoveryAccount.TabIndex = 1;
+            this.lblRecoveryAccount.Text = "游戏账号：";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblEmail.Location = new System.Drawing.Point(19, 137);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(175, 14);
+            this.lblEmail.TabIndex = 0;
+            this.lblEmail.Text = "注册游戏账号时用的邮箱：";
+            // 
+            // tbFindGamePassword
+            // 
+            this.tbFindGamePassword.BackColor = System.Drawing.Color.SteelBlue;
+            this.tbFindGamePassword.Controls.Add(this.label29);
+            this.tbFindGamePassword.Controls.Add(this.label28);
+            this.tbFindGamePassword.Controls.Add(this.lblAccountRecoveryStatusMsg);
+            this.tbFindGamePassword.Controls.Add(this.txtRecoveryAccountEmail);
+            this.tbFindGamePassword.Controls.Add(this.btnFindMyGameAccount);
+            this.tbFindGamePassword.Controls.Add(this.label27);
+            this.tbFindGamePassword.Location = new System.Drawing.Point(4, 22);
+            this.tbFindGamePassword.Name = "tbFindGamePassword";
+            this.tbFindGamePassword.Padding = new System.Windows.Forms.Padding(3);
+            this.tbFindGamePassword.Size = new System.Drawing.Size(478, 288);
+            this.tbFindGamePassword.TabIndex = 8;
+            this.tbFindGamePassword.Text = "找回账号";
             // 
             // tbFeedBack
             // 
@@ -844,7 +962,7 @@
             this.tbFeedBack.Location = new System.Drawing.Point(4, 22);
             this.tbFeedBack.Name = "tbFeedBack";
             this.tbFeedBack.Padding = new System.Windows.Forms.Padding(3);
-            this.tbFeedBack.Size = new System.Drawing.Size(451, 288);
+            this.tbFeedBack.Size = new System.Drawing.Size(478, 288);
             this.tbFeedBack.TabIndex = 6;
             this.tbFeedBack.Text = "意见反馈";
             // 
@@ -896,21 +1014,107 @@
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
-            // btnReset
+            // lblRecoveryMsgStatus
             // 
-            this.btnReset.Location = new System.Drawing.Point(240, 192);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 12;
-            this.btnReset.Text = "重置";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.lblRecoveryMsgStatus.AutoSize = true;
+            this.lblRecoveryMsgStatus.ForeColor = System.Drawing.Color.Yellow;
+            this.lblRecoveryMsgStatus.Location = new System.Drawing.Point(136, 269);
+            this.lblRecoveryMsgStatus.Name = "lblRecoveryMsgStatus";
+            this.lblRecoveryMsgStatus.Size = new System.Drawing.Size(0, 12);
+            this.lblRecoveryMsgStatus.TabIndex = 14;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(18, 99);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(149, 12);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "注册游戏账号时用的邮箱：";
+            // 
+            // btnFindMyGameAccount
+            // 
+            this.btnFindMyGameAccount.Location = new System.Drawing.Point(282, 147);
+            this.btnFindMyGameAccount.Name = "btnFindMyGameAccount";
+            this.btnFindMyGameAccount.Size = new System.Drawing.Size(131, 23);
+            this.btnFindMyGameAccount.TabIndex = 2;
+            this.btnFindMyGameAccount.Text = "找回我的账号";
+            this.btnFindMyGameAccount.UseVisualStyleBackColor = true;
+            this.btnFindMyGameAccount.Click += new System.EventHandler(this.btnFindMyGameAccount_Click);
+            // 
+            // txtRecoveryAccountEmail
+            // 
+            this.txtRecoveryAccountEmail.BackColor = System.Drawing.Color.YellowGreen;
+            this.txtRecoveryAccountEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRecoveryAccountEmail.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.txtRecoveryAccountEmail.Location = new System.Drawing.Point(173, 97);
+            this.txtRecoveryAccountEmail.MaxLength = 40;
+            this.txtRecoveryAccountEmail.Name = "txtRecoveryAccountEmail";
+            this.txtRecoveryAccountEmail.Size = new System.Drawing.Size(240, 21);
+            this.txtRecoveryAccountEmail.TabIndex = 13;
+            // 
+            // lblAccountRecoveryStatusMsg
+            // 
+            this.lblAccountRecoveryStatusMsg.AutoSize = true;
+            this.lblAccountRecoveryStatusMsg.ForeColor = System.Drawing.Color.Yellow;
+            this.lblAccountRecoveryStatusMsg.Location = new System.Drawing.Point(68, 184);
+            this.lblAccountRecoveryStatusMsg.Name = "lblAccountRecoveryStatusMsg";
+            this.lblAccountRecoveryStatusMsg.Size = new System.Drawing.Size(0, 12);
+            this.lblAccountRecoveryStatusMsg.TabIndex = 14;
+            // 
+            // label28
+            // 
+            this.label28.AllowDrop = true;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label28.ForeColor = System.Drawing.Color.GreenYellow;
+            this.label28.Location = new System.Drawing.Point(16, 20);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(219, 24);
+            this.label28.TabIndex = 15;
+            this.label28.Text = "如果你的游戏账号忘记了";
+            // 
+            // label29
+            // 
+            this.label29.AllowDrop = true;
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label29.ForeColor = System.Drawing.Color.GreenYellow;
+            this.label29.Location = new System.Drawing.Point(16, 44);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(390, 24);
+            this.label29.TabIndex = 16;
+            this.label29.Text = "你可以在下面输入注册游戏账号时使用的邮箱";
+            // 
+            // label30
+            // 
+            this.label30.AllowDrop = true;
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label30.ForeColor = System.Drawing.Color.GreenYellow;
+            this.label30.Location = new System.Drawing.Point(3, 57);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(466, 24);
+            this.label30.TabIndex = 18;
+            this.label30.Text = "在下面输入游戏账号和邮箱，找回的密码将发送到邮箱";
+            // 
+            // label31
+            // 
+            this.label31.AllowDrop = true;
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label31.ForeColor = System.Drawing.Color.GreenYellow;
+            this.label31.Location = new System.Drawing.Point(3, 23);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(390, 24);
+            this.label31.TabIndex = 17;
+            this.label31.Text = "如果记得游戏账号和注册游戏账号使用的邮箱";
             // 
             // BithRecovery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 315);
+            this.ClientSize = new System.Drawing.Size(485, 315);
             this.Controls.Add(this.tbRedmoonTools);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -927,6 +1131,10 @@
             this.tbGetBirth.PerformLayout();
             this.tbShapeshit.ResumeLayout(false);
             this.tbShapeshit.PerformLayout();
+            this.tbFindGameAccount.ResumeLayout(false);
+            this.tbFindGameAccount.PerformLayout();
+            this.tbFindGamePassword.ResumeLayout(false);
+            this.tbFindGamePassword.PerformLayout();
             this.tbFeedBack.ResumeLayout(false);
             this.tbFeedBack.PerformLayout();
             this.ResumeLayout(false);
@@ -1004,6 +1212,22 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.TabPage tbFindGameAccount;
+        private System.Windows.Forms.Button btnRecoveryPass;
+        private System.Windows.Forms.TextBox txtRecoveryEmail;
+        private System.Windows.Forms.TextBox txtRecoveryBillingId;
+        private System.Windows.Forms.Label lblRecoveryAccount;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.TabPage tbFindGamePassword;
+        private System.Windows.Forms.Label lblRecoveryMsgStatus;
+        private System.Windows.Forms.TextBox txtRecoveryAccountEmail;
+        private System.Windows.Forms.Button btnFindMyGameAccount;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label lblAccountRecoveryStatusMsg;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
     }
 }
 

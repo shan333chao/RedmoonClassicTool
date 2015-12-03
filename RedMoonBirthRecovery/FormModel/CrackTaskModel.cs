@@ -24,7 +24,9 @@ namespace RedMoonBirthRecovery.FormModel
         /// 执行的顺序
         /// </summary>
         public int currentIndex { get; set; }
-
+        /// <summary>
+        /// 标记当前是否继续运行
+        /// </summary>
         public bool state { get; set; }
     }
 }

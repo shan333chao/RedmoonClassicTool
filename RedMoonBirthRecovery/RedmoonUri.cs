@@ -32,5 +32,13 @@ namespace RedMoonBirthRecovery
         /// 游戏补丁2
         /// </summary>
         public static readonly string DownLoadPathcSecondUrl = "http://www.redmoonclassic.com/downloads/602t603.exe";
+        /// <summary>
+        /// 找回密码
+        /// </summary>
+        public static readonly string PasswordRecovery= "http://support.redmoonclassic.com/password.php";
+        /// <summary>
+        /// 找回游戏登录账号
+        /// </summary>
+        public static readonly string GameAccountRecovery = "http://support.redmoonclassic.com/account.php";
     }
 }
