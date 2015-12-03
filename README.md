@@ -20,3 +20,11 @@
 ![image](https://github.com/shan333chao/RedmoonClassicTool/blob/master/RedMoonBirthRecovery/ScreenShot/3%E7%A0%B4%E8%A7%A3.png)
 
 ![image](https://github.com/shan333chao/RedmoonClassicTool/blob/master/RedMoonBirthRecovery/ScreenShot/%E6%89%BE%E5%88%B0.png)
+
+2015-12-3 添加了找回账号
+
+![image](https://github.com/shan333chao/RedmoonClassicTool/blob/master/RedMoonBirthRecovery/ScreenShot/recoveryAccount.png)
+
+2015-12-3 添加了找回密码
+
+![image](https://github.com/shan333chao/RedmoonClassicTool/blob/master/RedMoonBirthRecovery/ScreenShot/recoveryPass.png)
