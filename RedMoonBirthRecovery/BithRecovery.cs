@@ -119,16 +119,16 @@ namespace RedMoonBirthRecovery
                     }
                     var task = crackTask.creakRequests[crackTask.currentIndex];
                     int shengyu = crackTask.creakRequests.Count - 1 - crackTask.currentIndex;
-                    lblStatus.Text = "当前" + task.CreckDate.ToString("yyyy-MM-dd") + "\t 已经尝试了" + (crackTask.currentIndex) + "次/还剩" + shengyu;
+                    lblBitrhdayCrackStatusMsg.Text = "当前" + task.CreckDate.ToString("yyyy-MM-dd") + "\t 已经尝试了" + (crackTask.currentIndex) + "次/还剩" + shengyu;
                     bool isok = await CrackBirth(task);
                     if (isok)
                     {
-                        lblStatus.Text = "正确生日是：" + task.CreckDate.ToString("yyyy-MM-dd");
+                        lblBitrhdayCrackStatusMsg.Text = "正确生日是：" + task.CreckDate.ToString("yyyy-MM-dd");
                         break;
                     }
                     if (shengyu == 0)
                     {
-                        lblStatus.Text = "很遗憾没有为你找到账号的生日";
+                        lblBitrhdayCrackStatusMsg.Text = "很遗憾没有为你找到账号的生日";
                     }
                 }
             }
@@ -206,9 +206,9 @@ namespace RedMoonBirthRecovery
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnRegUser_Click(object sender, EventArgs e)
+        private async void btnRegUser_Click(object sender, EventArgs e)
         {
-
+            btnRegUser.Enabled = false;
             DateTime bitrh = DateTime.Parse(txtBirthday.Text);
 
             UserAddModel user = new UserAddModel
@@ -223,19 +223,19 @@ namespace RedMoonBirthRecovery
                 day = bitrh.ToString("dd"),
                 year = bitrh.Year
             };
-            //string name = "loginID=" + txtloginID.Text + "&Password=" + txtPassword.Text + "&Password2=" + txtPassword2.Text +
-            //    "&month=" + bitrh.Month + "&day=" + bitrh.ToString("dd") + "&year=" + bitrh.Year + "&email=" + txtemail.Text +
-            //    "&question=" + txtquestion.Text + "&answer=" + txtanswer.Text + "&Create=Create"; 
-            //name = name.Replace("@", "%40");
-            string result = HttpHelper.Post<UserAddModel>(RedmoonUri.userRegist, user, RedmoonUri.userRegist);
+            
+            lblRegistStatusMsg.Text = "正在注册....";
+            string result =await HttpHelper.PostAsync<UserAddModel>(RedmoonUri.userRegist, user, RedmoonUri.userRegist);
             if (result.Contains("You're account has been created"))
             {
-                MessageBox.Show("帐号注册成功");
+              
+                lblRegistStatusMsg.Text = "帐号注册成功!";
             }
             else
             {
-                MessageBox.Show("您填写的信息有误,只能填写字母和数字");
+                lblRegistStatusMsg.Text = "您填写的信息有误,只能填写字母和数字"; 
             }
+            btnRegUser.Enabled = true;
         }
 
         #endregion
@@ -243,7 +243,7 @@ namespace RedMoonBirthRecovery
         #region 变身
 
 
-        private void btnChangeSkin_Click(object sender, EventArgs e)
+        private async void btnChangeSkin_Click(object sender, EventArgs e)
         {
             // string name = "Username=" + txtUsername.Text + "&BillID=" + txtBillID.Text + "&Password=" + txtBillPassword.Text + "&face=" + cbface.SelectedIndex + "&Fame=" + (cbFame.SelectedIndex == 1 ? 1000 : -1000) + "&ChangeSkin=Change+Skin";
 
@@ -255,7 +255,7 @@ namespace RedMoonBirthRecovery
                 Password = txtBillPassword.Text,
                 Username = txtUsername.Text
             };
-            string result = HttpHelper.Post<ShapeShitModel>(RedmoonUri.shapeshit, shape, RedmoonUri.shapeshit);
+            string result = await HttpHelper.PostAsync<ShapeShitModel>(RedmoonUri.shapeshit, shape, RedmoonUri.shapeshit);
             if (result.Contains("This event is currently NOT running"))
             {
                 MessageBox.Show("活动未开放");
@@ -332,26 +332,7 @@ namespace RedMoonBirthRecovery
         #endregion
 
 
-        /// <summary>
-        /// 意见反馈
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnSend_Click(object sender, EventArgs e)
-        {
-            if (txtTitle.Text.Trim().Length > 0 || txtContent.Text.Trim().Length > 0)
-            {
-                //发邮件
-                MailHelper mh = new MailHelper(txtTitle.Text, txtContent.Text);
-                mh.SendMail();
-                MessageBox.Show("发送成功");
-            }
-            else
-            {
-                MessageBox.Show("标题和内容不能为空");
-            }
-
-        }
+ 
         /// <summary>
         /// 找回密码
         /// </summary>
@@ -371,6 +352,8 @@ namespace RedMoonBirthRecovery
 
             if (ValidationHelper.validateModel<PasswordRecoveryModel>(recoveryModel, out errMsglist))
             {
+                this.btnRecoveryPass.Enabled = false;
+                lblRecoveryMsgStatus.Text = "正在提交请稍后... ...";
                 recoveryModel.email = recoveryModel.email.Replace("@", "%40");
                 result = await HttpHelper.PostAsync<PasswordRecoveryModel>(RedmoonUri.PasswordRecovery, recoveryModel, RedmoonUri.PasswordRecovery);
           
@@ -383,6 +366,7 @@ namespace RedMoonBirthRecovery
 
                     MessageBox.Show(string.Format("您输入的账号或邮箱不匹配！"));
                 }
+                this.btnRecoveryPass.Enabled = true;
             }
             else
             {
@@ -409,6 +393,8 @@ namespace RedMoonBirthRecovery
 
             if (ValidationHelper.validateModel<RecoveryGameAccountModel>(recoveryModel, out errMsglist))
             {
+                lblAccountRecoveryStatusMsg.Text = "正在提交请稍后... ...";
+                this.btnFindMyGameAccount.Enabled = false;
                 recoveryModel.email = recoveryModel.email.Replace("@", "%40");
                 result = await HttpHelper.PostAsync<RecoveryGameAccountModel>(RedmoonUri.GameAccountRecovery, recoveryModel, RedmoonUri.GameAccountRecovery);
 
@@ -422,6 +408,7 @@ namespace RedMoonBirthRecovery
                 { 
                     MessageBox.Show(string.Format("没有找到任何使用{0}邮箱注册的账号！",txtRecoveryAccountEmail.Text));
                 }
+                this.btnFindMyGameAccount.Enabled = true;
             }
             else
             {
@@ -431,6 +418,19 @@ namespace RedMoonBirthRecovery
                     errorResult += item.errMsg + "\r\n";
                 }
                 MessageBox.Show(errorResult, "输入错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        /// <summary>
+        /// FeedBack UrlClick
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void feedBackUrl_Click(object sender, EventArgs e)
+        {
+            var link=sender as LinkLabel;
+            if (link!=null)
+            {
+                Process.Start("iexplore.exe", link.Text);
             }
         }
     }

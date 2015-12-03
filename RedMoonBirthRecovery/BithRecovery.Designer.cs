@@ -34,11 +34,9 @@
             this.txtPass = new System.Windows.Forms.TextBox();
             this.dtpBeginDay = new System.Windows.Forms.DateTimePicker();
             this.dtpEndDay = new System.Windows.Forms.DateTimePicker();
-            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblBitrhdayCrackStatusMsg = new System.Windows.Forms.Label();
             this.tbRedmoonTools = new System.Windows.Forms.TabControl();
             this.tbabout = new System.Windows.Forms.TabPage();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.lbStart = new System.Windows.Forms.LinkLabel();
             this.label24 = new System.Windows.Forms.Label();
@@ -53,8 +51,9 @@
             this.lkClient = new System.Windows.Forms.LinkLabel();
             this.label8 = new System.Windows.Forms.Label();
             this.tbAdd = new System.Windows.Forms.TabPage();
+            this.lblRegistStatusMsg = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lblRegistNotice = new System.Windows.Forms.Label();
             this.btnRegUser = new System.Windows.Forms.Button();
             this.txtBirthday = new System.Windows.Forms.DateTimePicker();
             this.txtanswer = new System.Windows.Forms.TextBox();
@@ -73,14 +72,14 @@
             this.tbGetBirth = new System.Windows.Forms.TabPage();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblBirthdayCrackNotice = new System.Windows.Forms.Label();
             this.lblBDate = new System.Windows.Forms.Label();
             this.lblEdate = new System.Windows.Forms.Label();
             this.lblpass = new System.Windows.Forms.Label();
             this.lblAccount = new System.Windows.Forms.Label();
             this.tbShapeshit = new System.Windows.Forms.TabPage();
             this.label20 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblShapeShitMsg = new System.Windows.Forms.Label();
             this.cbFame = new System.Windows.Forms.ComboBox();
             this.cbface = new System.Windows.Forms.ComboBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -93,28 +92,31 @@
             this.txtBillID = new System.Windows.Forms.TextBox();
             this.btnChangeSkin = new System.Windows.Forms.Button();
             this.tbFindGameAccount = new System.Windows.Forms.TabPage();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.lblRecoveryMsgStatus = new System.Windows.Forms.Label();
             this.btnRecoveryPass = new System.Windows.Forms.Button();
             this.txtRecoveryEmail = new System.Windows.Forms.TextBox();
             this.txtRecoveryBillingId = new System.Windows.Forms.TextBox();
             this.lblRecoveryAccount = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.tbFindGamePassword = new System.Windows.Forms.TabPage();
-            this.tbFeedBack = new System.Windows.Forms.TabPage();
-            this.txtContent = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.lblRecoveryMsgStatus = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.btnFindMyGameAccount = new System.Windows.Forms.Button();
-            this.txtRecoveryAccountEmail = new System.Windows.Forms.TextBox();
-            this.lblAccountRecoveryStatusMsg = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.lblAccountRecoveryStatusMsg = new System.Windows.Forms.Label();
+            this.txtRecoveryAccountEmail = new System.Windows.Forms.TextBox();
+            this.btnFindMyGameAccount = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.tbFeedBack = new System.Windows.Forms.TabPage();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lblBlogs = new System.Windows.Forms.Label();
+            this.lblRedmoonSite = new System.Windows.Forms.Label();
+            this.lblGirhub = new System.Windows.Forms.Label();
+            this.llBlogUrl = new System.Windows.Forms.LinkLabel();
+            this.lblRedmoonUrl = new System.Windows.Forms.LinkLabel();
+            this.llGirhubUrl = new System.Windows.Forms.LinkLabel();
             this.tbRedmoonTools.SuspendLayout();
             this.tbabout.SuspendLayout();
             this.tbAdd.SuspendLayout();
@@ -128,7 +130,7 @@
             // btnPost
             // 
             this.btnPost.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnPost.Location = new System.Drawing.Point(77, 192);
+            this.btnPost.Location = new System.Drawing.Point(124, 192);
             this.btnPost.Name = "btnPost";
             this.btnPost.Size = new System.Drawing.Size(75, 21);
             this.btnPost.TabIndex = 5;
@@ -141,7 +143,7 @@
             this.txtaccount.BackColor = System.Drawing.Color.YellowGreen;
             this.txtaccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtaccount.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtaccount.Location = new System.Drawing.Point(77, 63);
+            this.txtaccount.Location = new System.Drawing.Point(124, 63);
             this.txtaccount.MaxLength = 12;
             this.txtaccount.Name = "txtaccount";
             this.txtaccount.Size = new System.Drawing.Size(228, 21);
@@ -152,7 +154,7 @@
             this.txtPass.BackColor = System.Drawing.Color.YellowGreen;
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPass.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtPass.Location = new System.Drawing.Point(77, 88);
+            this.txtPass.Location = new System.Drawing.Point(124, 88);
             this.txtPass.MaxLength = 10;
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
@@ -161,7 +163,7 @@
             // 
             // dtpBeginDay
             // 
-            this.dtpBeginDay.Location = new System.Drawing.Point(77, 119);
+            this.dtpBeginDay.Location = new System.Drawing.Point(124, 119);
             this.dtpBeginDay.MaxDate = new System.DateTime(2110, 1, 1, 0, 0, 0, 0);
             this.dtpBeginDay.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpBeginDay.Name = "dtpBeginDay";
@@ -171,7 +173,7 @@
             // 
             // dtpEndDay
             // 
-            this.dtpEndDay.Location = new System.Drawing.Point(77, 143);
+            this.dtpEndDay.Location = new System.Drawing.Point(124, 143);
             this.dtpEndDay.MaxDate = new System.DateTime(2100, 1, 1, 0, 0, 0, 0);
             this.dtpEndDay.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpEndDay.Name = "dtpEndDay";
@@ -179,16 +181,16 @@
             this.dtpEndDay.TabIndex = 4;
             this.dtpEndDay.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             // 
-            // lblStatus
+            // lblBitrhdayCrackStatusMsg
             // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblStatus.ForeColor = System.Drawing.Color.Gold;
-            this.lblStatus.Location = new System.Drawing.Point(16, 243);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(41, 20);
-            this.lblStatus.TabIndex = 5;
-            this.lblStatus.Text = "状态";
+            this.lblBitrhdayCrackStatusMsg.AutoSize = true;
+            this.lblBitrhdayCrackStatusMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblBitrhdayCrackStatusMsg.ForeColor = System.Drawing.Color.Gold;
+            this.lblBitrhdayCrackStatusMsg.Location = new System.Drawing.Point(63, 242);
+            this.lblBitrhdayCrackStatusMsg.Name = "lblBitrhdayCrackStatusMsg";
+            this.lblBitrhdayCrackStatusMsg.Size = new System.Drawing.Size(31, 15);
+            this.lblBitrhdayCrackStatusMsg.TabIndex = 5;
+            this.lblBitrhdayCrackStatusMsg.Text = "状态";
             // 
             // tbRedmoonTools
             // 
@@ -209,8 +211,6 @@
             // tbabout
             // 
             this.tbabout.BackColor = System.Drawing.Color.SteelBlue;
-            this.tbabout.Controls.Add(this.label19);
-            this.tbabout.Controls.Add(this.label18);
             this.tbabout.Controls.Add(this.label25);
             this.tbabout.Controls.Add(this.lbStart);
             this.tbabout.Controls.Add(this.label24);
@@ -231,31 +231,11 @@
             this.tbabout.TabIndex = 5;
             this.tbabout.Text = "帮助";
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(314, 263);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(105, 15);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "QQ群：82108417";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label18.Location = new System.Drawing.Point(314, 242);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(116, 15);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "作者: NewGeili_Null";
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label25.Location = new System.Drawing.Point(36, 167);
+            this.label25.Location = new System.Drawing.Point(58, 198);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(271, 15);
             this.label25.TabIndex = 12;
@@ -266,7 +246,7 @@
             this.lbStart.AutoSize = true;
             this.lbStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lbStart.LinkColor = System.Drawing.Color.GreenYellow;
-            this.lbStart.Location = new System.Drawing.Point(91, 199);
+            this.lbStart.Location = new System.Drawing.Point(113, 230);
             this.lbStart.Name = "lbStart";
             this.lbStart.Size = new System.Drawing.Size(55, 15);
             this.lbStart.TabIndex = 11;
@@ -278,7 +258,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label24.Location = new System.Drawing.Point(33, 135);
+            this.label24.Location = new System.Drawing.Point(55, 166);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(54, 15);
             this.label24.TabIndex = 10;
@@ -288,7 +268,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label23.Location = new System.Drawing.Point(33, 105);
+            this.label23.Location = new System.Drawing.Point(55, 131);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(146, 15);
             this.label23.TabIndex = 9;
@@ -299,7 +279,7 @@
             this.lkReg.AutoSize = true;
             this.lkReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lkReg.LinkColor = System.Drawing.Color.GreenYellow;
-            this.lkReg.Location = new System.Drawing.Point(91, 135);
+            this.lkReg.Location = new System.Drawing.Point(113, 166);
             this.lkReg.Name = "lkReg";
             this.lkReg.Size = new System.Drawing.Size(79, 15);
             this.lkReg.TabIndex = 8;
@@ -311,7 +291,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label22.Location = new System.Drawing.Point(314, 74);
+            this.label22.Location = new System.Drawing.Point(336, 100);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(54, 15);
             this.label22.TabIndex = 7;
@@ -321,7 +301,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(203, 74);
+            this.label14.Location = new System.Drawing.Point(225, 100);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(54, 15);
             this.label14.TabIndex = 6;
@@ -331,7 +311,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label13.Location = new System.Drawing.Point(33, 74);
+            this.label13.Location = new System.Drawing.Point(55, 100);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(54, 15);
             this.label13.TabIndex = 5;
@@ -341,7 +321,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(33, 51);
+            this.label10.Location = new System.Drawing.Point(55, 70);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(319, 15);
             this.label10.TabIndex = 4;
@@ -352,7 +332,7 @@
             this.lbPatch1.AutoSize = true;
             this.lbPatch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lbPatch1.LinkColor = System.Drawing.Color.GreenYellow;
-            this.lbPatch1.Location = new System.Drawing.Point(263, 74);
+            this.lbPatch1.Location = new System.Drawing.Point(285, 100);
             this.lbPatch1.Name = "lbPatch1";
             this.lbPatch1.Size = new System.Drawing.Size(38, 15);
             this.lbPatch1.TabIndex = 3;
@@ -365,7 +345,7 @@
             this.lkPatch2.AutoSize = true;
             this.lkPatch2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lkPatch2.LinkColor = System.Drawing.Color.GreenYellow;
-            this.lkPatch2.Location = new System.Drawing.Point(372, 74);
+            this.lkPatch2.Location = new System.Drawing.Point(394, 100);
             this.lkPatch2.Name = "lkPatch2";
             this.lkPatch2.Size = new System.Drawing.Size(38, 15);
             this.lkPatch2.TabIndex = 2;
@@ -378,7 +358,7 @@
             this.lkClient.AutoSize = true;
             this.lkClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lkClient.LinkColor = System.Drawing.Color.GreenYellow;
-            this.lkClient.Location = new System.Drawing.Point(93, 74);
+            this.lkClient.Location = new System.Drawing.Point(115, 100);
             this.lkClient.Name = "lkClient";
             this.lkClient.Size = new System.Drawing.Size(91, 15);
             this.lkClient.TabIndex = 1;
@@ -390,7 +370,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(33, 23);
+            this.label8.Location = new System.Drawing.Point(55, 42);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(127, 15);
             this.label8.TabIndex = 0;
@@ -399,8 +379,9 @@
             // tbAdd
             // 
             this.tbAdd.BackColor = System.Drawing.Color.SteelBlue;
+            this.tbAdd.Controls.Add(this.lblRegistStatusMsg);
             this.tbAdd.Controls.Add(this.label21);
-            this.tbAdd.Controls.Add(this.label26);
+            this.tbAdd.Controls.Add(this.lblRegistNotice);
             this.tbAdd.Controls.Add(this.btnRegUser);
             this.tbAdd.Controls.Add(this.txtBirthday);
             this.tbAdd.Controls.Add(this.txtanswer);
@@ -423,31 +404,40 @@
             this.tbAdd.TabIndex = 1;
             this.tbAdd.Text = "游戏帐号注册";
             // 
+            // lblRegistStatusMsg
+            // 
+            this.lblRegistStatusMsg.AutoSize = true;
+            this.lblRegistStatusMsg.ForeColor = System.Drawing.Color.Yellow;
+            this.lblRegistStatusMsg.Location = new System.Drawing.Point(200, 269);
+            this.lblRegistStatusMsg.Name = "lblRegistStatusMsg";
+            this.lblRegistStatusMsg.Size = new System.Drawing.Size(0, 12);
+            this.lblRegistStatusMsg.TabIndex = 34;
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label21.Location = new System.Drawing.Point(308, 51);
+            this.label21.Location = new System.Drawing.Point(353, 57);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(89, 12);
             this.label21.TabIndex = 33;
             this.label21.Text = "帐号不分大小写";
             // 
-            // label26
+            // lblRegistNotice
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label26.ForeColor = System.Drawing.Color.GreenYellow;
-            this.label26.Location = new System.Drawing.Point(3, 15);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(441, 20);
-            this.label26.TabIndex = 32;
-            this.label26.Text = "以下内容必需填写字母和数字，每个都必须填写，生日请牢记";
+            this.lblRegistNotice.AutoSize = true;
+            this.lblRegistNotice.Font = new System.Drawing.Font("宋体", 9F);
+            this.lblRegistNotice.ForeColor = System.Drawing.Color.GreenYellow;
+            this.lblRegistNotice.Location = new System.Drawing.Point(98, 29);
+            this.lblRegistNotice.Name = "lblRegistNotice";
+            this.lblRegistNotice.Size = new System.Drawing.Size(329, 12);
+            this.lblRegistNotice.TabIndex = 32;
+            this.lblRegistNotice.Text = "以下内容必需填写字母和数字，每个都必须填写，生日请牢记";
             // 
             // btnRegUser
             // 
             this.btnRegUser.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnRegUser.Location = new System.Drawing.Point(109, 251);
+            this.btnRegUser.Location = new System.Drawing.Point(272, 244);
             this.btnRegUser.Name = "btnRegUser";
             this.btnRegUser.Size = new System.Drawing.Size(75, 21);
             this.btnRegUser.TabIndex = 30;
@@ -457,11 +447,11 @@
             // 
             // txtBirthday
             // 
-            this.txtBirthday.Location = new System.Drawing.Point(89, 132);
+            this.txtBirthday.Location = new System.Drawing.Point(134, 138);
             this.txtBirthday.MaxDate = new System.DateTime(2100, 1, 1, 0, 0, 0, 0);
             this.txtBirthday.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.txtBirthday.Name = "txtBirthday";
-            this.txtBirthday.Size = new System.Drawing.Size(200, 21);
+            this.txtBirthday.Size = new System.Drawing.Size(213, 21);
             this.txtBirthday.TabIndex = 26;
             this.txtBirthday.Value = new System.DateTime(1989, 1, 12, 0, 0, 0, 0);
             // 
@@ -470,7 +460,7 @@
             this.txtanswer.BackColor = System.Drawing.Color.YellowGreen;
             this.txtanswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtanswer.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtanswer.Location = new System.Drawing.Point(89, 211);
+            this.txtanswer.Location = new System.Drawing.Point(134, 217);
             this.txtanswer.Name = "txtanswer";
             this.txtanswer.Size = new System.Drawing.Size(213, 21);
             this.txtanswer.TabIndex = 29;
@@ -479,7 +469,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(28, 214);
+            this.label7.Location = new System.Drawing.Point(73, 220);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 15);
             this.label7.TabIndex = 28;
@@ -490,7 +480,7 @@
             this.txtemail.BackColor = System.Drawing.Color.YellowGreen;
             this.txtemail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtemail.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtemail.Location = new System.Drawing.Point(89, 161);
+            this.txtemail.Location = new System.Drawing.Point(134, 167);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(213, 21);
             this.txtemail.TabIndex = 27;
@@ -500,7 +490,7 @@
             this.txtquestion.BackColor = System.Drawing.Color.YellowGreen;
             this.txtquestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtquestion.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtquestion.Location = new System.Drawing.Point(89, 187);
+            this.txtquestion.Location = new System.Drawing.Point(134, 193);
             this.txtquestion.Name = "txtquestion";
             this.txtquestion.Size = new System.Drawing.Size(213, 21);
             this.txtquestion.TabIndex = 28;
@@ -510,7 +500,7 @@
             this.txtPassword.BackColor = System.Drawing.Color.YellowGreen;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtPassword.Location = new System.Drawing.Point(89, 73);
+            this.txtPassword.Location = new System.Drawing.Point(134, 79);
             this.txtPassword.MaxLength = 10;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(213, 21);
@@ -521,7 +511,7 @@
             this.txtPassword2.BackColor = System.Drawing.Color.YellowGreen;
             this.txtPassword2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword2.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtPassword2.Location = new System.Drawing.Point(89, 101);
+            this.txtPassword2.Location = new System.Drawing.Point(134, 107);
             this.txtPassword2.MaxLength = 10;
             this.txtPassword2.Name = "txtPassword2";
             this.txtPassword2.Size = new System.Drawing.Size(213, 21);
@@ -532,7 +522,7 @@
             this.txtloginID.BackColor = System.Drawing.Color.YellowGreen;
             this.txtloginID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtloginID.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtloginID.Location = new System.Drawing.Point(89, 49);
+            this.txtloginID.Location = new System.Drawing.Point(134, 55);
             this.txtloginID.MaxLength = 12;
             this.txtloginID.Name = "txtloginID";
             this.txtloginID.Size = new System.Drawing.Size(213, 21);
@@ -542,7 +532,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(1, 190);
+            this.label4.Location = new System.Drawing.Point(46, 196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 15);
             this.label4.TabIndex = 22;
@@ -552,7 +542,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(52, 161);
+            this.label5.Location = new System.Drawing.Point(97, 167);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 15);
             this.label5.TabIndex = 21;
@@ -562,7 +552,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(52, 132);
+            this.label6.Location = new System.Drawing.Point(97, 138);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(31, 15);
             this.label6.TabIndex = 20;
@@ -572,7 +562,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(28, 103);
+            this.label3.Location = new System.Drawing.Point(73, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 15);
             this.label3.TabIndex = 19;
@@ -582,7 +572,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(52, 77);
+            this.label2.Location = new System.Drawing.Point(97, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 15);
             this.label2.TabIndex = 18;
@@ -592,7 +582,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(52, 49);
+            this.label1.Location = new System.Drawing.Point(97, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 15);
             this.label1.TabIndex = 17;
@@ -603,13 +593,13 @@
             this.tbGetBirth.BackColor = System.Drawing.Color.SteelBlue;
             this.tbGetBirth.Controls.Add(this.btnReset);
             this.tbGetBirth.Controls.Add(this.btnStop);
-            this.tbGetBirth.Controls.Add(this.label15);
+            this.tbGetBirth.Controls.Add(this.lblBirthdayCrackNotice);
             this.tbGetBirth.Controls.Add(this.lblBDate);
             this.tbGetBirth.Controls.Add(this.lblEdate);
             this.tbGetBirth.Controls.Add(this.lblpass);
             this.tbGetBirth.Controls.Add(this.lblAccount);
             this.tbGetBirth.Controls.Add(this.txtaccount);
-            this.tbGetBirth.Controls.Add(this.lblStatus);
+            this.tbGetBirth.Controls.Add(this.lblBitrhdayCrackStatusMsg);
             this.tbGetBirth.Controls.Add(this.btnPost);
             this.tbGetBirth.Controls.Add(this.dtpEndDay);
             this.tbGetBirth.Controls.Add(this.txtPass);
@@ -623,7 +613,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(240, 192);
+            this.btnReset.Location = new System.Drawing.Point(286, 190);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
             this.btnReset.TabIndex = 7;
@@ -634,7 +624,7 @@
             // btnStop
             // 
             this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnStop.Location = new System.Drawing.Point(158, 192);
+            this.btnStop.Location = new System.Drawing.Point(205, 192);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 21);
             this.btnStop.TabIndex = 6;
@@ -642,22 +632,22 @@
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
-            // label15
+            // lblBirthdayCrackNotice
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label15.ForeColor = System.Drawing.Color.GreenYellow;
-            this.label15.Location = new System.Drawing.Point(1, 19);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(447, 24);
-            this.label15.TabIndex = 10;
-            this.label15.Text = "输入游戏帐号密码，选择日期范围，提交后开始破解";
+            this.lblBirthdayCrackNotice.AutoSize = true;
+            this.lblBirthdayCrackNotice.Font = new System.Drawing.Font("宋体", 9F);
+            this.lblBirthdayCrackNotice.ForeColor = System.Drawing.Color.GreenYellow;
+            this.lblBirthdayCrackNotice.Location = new System.Drawing.Point(88, 29);
+            this.lblBirthdayCrackNotice.Name = "lblBirthdayCrackNotice";
+            this.lblBirthdayCrackNotice.Size = new System.Drawing.Size(281, 12);
+            this.lblBirthdayCrackNotice.TabIndex = 10;
+            this.lblBirthdayCrackNotice.Text = "输入游戏帐号密码，选择日期范围，提交后开始破解";
             // 
             // lblBDate
             // 
             this.lblBDate.AutoSize = true;
             this.lblBDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblBDate.Location = new System.Drawing.Point(16, 119);
+            this.lblBDate.Location = new System.Drawing.Point(63, 119);
             this.lblBDate.Name = "lblBDate";
             this.lblBDate.Size = new System.Drawing.Size(55, 15);
             this.lblBDate.TabIndex = 9;
@@ -667,7 +657,7 @@
             // 
             this.lblEdate.AutoSize = true;
             this.lblEdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblEdate.Location = new System.Drawing.Point(16, 143);
+            this.lblEdate.Location = new System.Drawing.Point(63, 143);
             this.lblEdate.Name = "lblEdate";
             this.lblEdate.Size = new System.Drawing.Size(55, 15);
             this.lblEdate.TabIndex = 8;
@@ -677,7 +667,7 @@
             // 
             this.lblpass.AutoSize = true;
             this.lblpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblpass.Location = new System.Drawing.Point(40, 90);
+            this.lblpass.Location = new System.Drawing.Point(87, 90);
             this.lblpass.Name = "lblpass";
             this.lblpass.Size = new System.Drawing.Size(31, 15);
             this.lblpass.TabIndex = 7;
@@ -687,7 +677,7 @@
             // 
             this.lblAccount.AutoSize = true;
             this.lblAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblAccount.Location = new System.Drawing.Point(40, 63);
+            this.lblAccount.Location = new System.Drawing.Point(87, 63);
             this.lblAccount.Name = "lblAccount";
             this.lblAccount.Size = new System.Drawing.Size(31, 15);
             this.lblAccount.TabIndex = 6;
@@ -697,7 +687,7 @@
             // 
             this.tbShapeshit.BackColor = System.Drawing.Color.SteelBlue;
             this.tbShapeshit.Controls.Add(this.label20);
-            this.tbShapeshit.Controls.Add(this.label9);
+            this.tbShapeshit.Controls.Add(this.lblShapeShitMsg);
             this.tbShapeshit.Controls.Add(this.cbFame);
             this.tbShapeshit.Controls.Add(this.cbface);
             this.tbShapeshit.Controls.Add(this.txtUsername);
@@ -719,22 +709,23 @@
             // label20
             // 
             this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label20.Location = new System.Drawing.Point(308, 58);
+            this.label20.Location = new System.Drawing.Point(359, 71);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(101, 12);
+            this.label20.Size = new System.Drawing.Size(103, 15);
             this.label20.TabIndex = 14;
             this.label20.Text = "角色名区分大小写";
             // 
-            // label9
+            // lblShapeShitMsg
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.GreenYellow;
-            this.label9.Location = new System.Drawing.Point(8, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(443, 12);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "游戏人物的昵称（例如账号里面有一个蛋妹，人物名叫Xiao2,角色名就填写xiao2）";
+            this.lblShapeShitMsg.AutoSize = true;
+            this.lblShapeShitMsg.ForeColor = System.Drawing.Color.GreenYellow;
+            this.lblShapeShitMsg.Location = new System.Drawing.Point(19, 32);
+            this.lblShapeShitMsg.Name = "lblShapeShitMsg";
+            this.lblShapeShitMsg.Size = new System.Drawing.Size(443, 12);
+            this.lblShapeShitMsg.TabIndex = 13;
+            this.lblShapeShitMsg.Text = "游戏人物的昵称（例如账号里面有一个蛋妹，人物名叫Xiao2,角色名就填写xiao2）";
             // 
             // cbFame
             // 
@@ -744,7 +735,7 @@
             this.cbFame.Items.AddRange(new object[] {
             "红名",
             "蓝名"});
-            this.cbFame.Location = new System.Drawing.Point(61, 162);
+            this.cbFame.Location = new System.Drawing.Point(113, 173);
             this.cbFame.Name = "cbFame";
             this.cbFame.Size = new System.Drawing.Size(240, 20);
             this.cbFame.TabIndex = 14;
@@ -764,7 +755,7 @@
             "蛋妹",
             "露娜丽娜",
             "罗贝塔"});
-            this.cbface.Location = new System.Drawing.Point(61, 137);
+            this.cbface.Location = new System.Drawing.Point(113, 148);
             this.cbface.Name = "cbface";
             this.cbface.Size = new System.Drawing.Size(240, 20);
             this.cbface.TabIndex = 13;
@@ -774,7 +765,7 @@
             this.txtUsername.BackColor = System.Drawing.Color.YellowGreen;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsername.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtUsername.Location = new System.Drawing.Point(61, 53);
+            this.txtUsername.Location = new System.Drawing.Point(113, 68);
             this.txtUsername.MaxLength = 12;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(240, 21);
@@ -784,7 +775,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(24, 110);
+            this.label12.Location = new System.Drawing.Point(76, 121);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(31, 15);
             this.label12.TabIndex = 9;
@@ -794,7 +785,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(24, 134);
+            this.label11.Location = new System.Drawing.Point(76, 145);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 15);
             this.label11.TabIndex = 8;
@@ -804,7 +795,7 @@
             // 
             this.lblhonor.AutoSize = true;
             this.lblhonor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblhonor.Location = new System.Drawing.Point(24, 162);
+            this.lblhonor.Location = new System.Drawing.Point(76, 173);
             this.lblhonor.Name = "lblhonor";
             this.lblhonor.Size = new System.Drawing.Size(31, 15);
             this.lblhonor.TabIndex = 7;
@@ -814,7 +805,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblUsername.Location = new System.Drawing.Point(12, 53);
+            this.lblUsername.Location = new System.Drawing.Point(64, 68);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(43, 15);
             this.lblUsername.TabIndex = 6;
@@ -824,7 +815,7 @@
             // 
             this.lblShape.AutoSize = true;
             this.lblShape.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblShape.Location = new System.Drawing.Point(24, 82);
+            this.lblShape.Location = new System.Drawing.Point(76, 93);
             this.lblShape.Name = "lblShape";
             this.lblShape.Size = new System.Drawing.Size(31, 15);
             this.lblShape.TabIndex = 5;
@@ -835,7 +826,7 @@
             this.txtBillPassword.BackColor = System.Drawing.Color.YellowGreen;
             this.txtBillPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBillPassword.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtBillPassword.Location = new System.Drawing.Point(61, 113);
+            this.txtBillPassword.Location = new System.Drawing.Point(113, 124);
             this.txtBillPassword.MaxLength = 10;
             this.txtBillPassword.Name = "txtBillPassword";
             this.txtBillPassword.PasswordChar = '*';
@@ -847,7 +838,7 @@
             this.txtBillID.BackColor = System.Drawing.Color.YellowGreen;
             this.txtBillID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBillID.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtBillID.Location = new System.Drawing.Point(61, 85);
+            this.txtBillID.Location = new System.Drawing.Point(113, 96);
             this.txtBillID.MaxLength = 12;
             this.txtBillID.Name = "txtBillID";
             this.txtBillID.Size = new System.Drawing.Size(240, 21);
@@ -856,7 +847,7 @@
             // btnChangeSkin
             // 
             this.btnChangeSkin.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnChangeSkin.Location = new System.Drawing.Point(70, 201);
+            this.btnChangeSkin.Location = new System.Drawing.Point(278, 212);
             this.btnChangeSkin.Name = "btnChangeSkin";
             this.btnChangeSkin.Size = new System.Drawing.Size(75, 23);
             this.btnChangeSkin.TabIndex = 15;
@@ -882,9 +873,43 @@
             this.tbFindGameAccount.TabIndex = 7;
             this.tbFindGameAccount.Text = "找回密码";
             // 
+            // label30
+            // 
+            this.label30.AllowDrop = true;
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("宋体", 9F);
+            this.label30.ForeColor = System.Drawing.Color.GreenYellow;
+            this.label30.Location = new System.Drawing.Point(26, 74);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(293, 12);
+            this.label30.TabIndex = 18;
+            this.label30.Text = "在下面输入游戏账号和邮箱，找回的密码将发送到邮箱";
+            // 
+            // label31
+            // 
+            this.label31.AllowDrop = true;
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("宋体", 9F);
+            this.label31.ForeColor = System.Drawing.Color.GreenYellow;
+            this.label31.Location = new System.Drawing.Point(26, 40);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(245, 12);
+            this.label31.TabIndex = 17;
+            this.label31.Text = "如果记得游戏账号和注册游戏账号时用的邮箱";
+            // 
+            // lblRecoveryMsgStatus
+            // 
+            this.lblRecoveryMsgStatus.AutoSize = true;
+            this.lblRecoveryMsgStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblRecoveryMsgStatus.ForeColor = System.Drawing.Color.Yellow;
+            this.lblRecoveryMsgStatus.Location = new System.Drawing.Point(127, 260);
+            this.lblRecoveryMsgStatus.Name = "lblRecoveryMsgStatus";
+            this.lblRecoveryMsgStatus.Size = new System.Drawing.Size(0, 15);
+            this.lblRecoveryMsgStatus.TabIndex = 14;
+            // 
             // btnRecoveryPass
             // 
-            this.btnRecoveryPass.Location = new System.Drawing.Point(342, 207);
+            this.btnRecoveryPass.Location = new System.Drawing.Point(320, 180);
             this.btnRecoveryPass.Name = "btnRecoveryPass";
             this.btnRecoveryPass.Size = new System.Drawing.Size(102, 23);
             this.btnRecoveryPass.TabIndex = 13;
@@ -898,7 +923,7 @@
             this.txtRecoveryEmail.BackColor = System.Drawing.Color.YellowGreen;
             this.txtRecoveryEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRecoveryEmail.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtRecoveryEmail.Location = new System.Drawing.Point(204, 137);
+            this.txtRecoveryEmail.Location = new System.Drawing.Point(182, 115);
             this.txtRecoveryEmail.MaxLength = 40;
             this.txtRecoveryEmail.Name = "txtRecoveryEmail";
             this.txtRecoveryEmail.Size = new System.Drawing.Size(240, 21);
@@ -910,7 +935,7 @@
             this.txtRecoveryBillingId.BackColor = System.Drawing.Color.YellowGreen;
             this.txtRecoveryBillingId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRecoveryBillingId.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtRecoveryBillingId.Location = new System.Drawing.Point(204, 163);
+            this.txtRecoveryBillingId.Location = new System.Drawing.Point(182, 141);
             this.txtRecoveryBillingId.MaxLength = 13;
             this.txtRecoveryBillingId.Name = "txtRecoveryBillingId";
             this.txtRecoveryBillingId.Size = new System.Drawing.Size(240, 21);
@@ -919,20 +944,20 @@
             // lblRecoveryAccount
             // 
             this.lblRecoveryAccount.AutoSize = true;
-            this.lblRecoveryAccount.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblRecoveryAccount.Location = new System.Drawing.Point(117, 163);
+            this.lblRecoveryAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblRecoveryAccount.Location = new System.Drawing.Point(109, 140);
             this.lblRecoveryAccount.Name = "lblRecoveryAccount";
-            this.lblRecoveryAccount.Size = new System.Drawing.Size(77, 14);
+            this.lblRecoveryAccount.Size = new System.Drawing.Size(67, 15);
             this.lblRecoveryAccount.TabIndex = 1;
             this.lblRecoveryAccount.Text = "游戏账号：";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblEmail.Location = new System.Drawing.Point(19, 137);
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblEmail.Location = new System.Drawing.Point(25, 115);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(175, 14);
+            this.lblEmail.Size = new System.Drawing.Size(151, 15);
             this.lblEmail.TabIndex = 0;
             this.lblEmail.Text = "注册游戏账号时用的邮箱：";
             // 
@@ -953,90 +978,65 @@
             this.tbFindGamePassword.TabIndex = 8;
             this.tbFindGamePassword.Text = "找回账号";
             // 
-            // tbFeedBack
+            // label32
             // 
-            this.tbFeedBack.BackColor = System.Drawing.Color.SteelBlue;
-            this.tbFeedBack.Controls.Add(this.txtContent);
-            this.tbFeedBack.Controls.Add(this.label17);
-            this.tbFeedBack.Controls.Add(this.txtTitle);
-            this.tbFeedBack.Controls.Add(this.label16);
-            this.tbFeedBack.Controls.Add(this.btnSend);
-            this.tbFeedBack.Location = new System.Drawing.Point(4, 22);
-            this.tbFeedBack.Name = "tbFeedBack";
-            this.tbFeedBack.Padding = new System.Windows.Forms.Padding(3);
-            this.tbFeedBack.Size = new System.Drawing.Size(478, 288);
-            this.tbFeedBack.TabIndex = 6;
-            this.tbFeedBack.Text = "意见反馈";
+            this.label32.AllowDrop = true;
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("宋体", 9F);
+            this.label32.ForeColor = System.Drawing.Color.GreenYellow;
+            this.label32.Location = new System.Drawing.Point(40, 93);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(185, 12);
+            this.label32.TabIndex = 17;
+            this.label32.Text = "游戏账号会发送到你输入的邮箱中";
             // 
-            // txtContent
+            // label29
             // 
-            this.txtContent.BackColor = System.Drawing.Color.YellowGreen;
-            this.txtContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtContent.Location = new System.Drawing.Point(10, 117);
-            this.txtContent.Multiline = true;
-            this.txtContent.Name = "txtContent";
-            this.txtContent.Size = new System.Drawing.Size(432, 143);
-            this.txtContent.TabIndex = 4;
+            this.label29.AllowDrop = true;
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("宋体", 9F);
+            this.label29.ForeColor = System.Drawing.Color.GreenYellow;
+            this.label29.Location = new System.Drawing.Point(41, 63);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(209, 12);
+            this.label29.TabIndex = 16;
+            this.label29.Text = "在下面输入注册游戏账号时使用的邮箱";
             // 
-            // label17
+            // label28
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(7, 103);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(29, 12);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "内容";
+            this.label28.AllowDrop = true;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("宋体", 9F);
+            this.label28.ForeColor = System.Drawing.Color.GreenYellow;
+            this.label28.Location = new System.Drawing.Point(41, 39);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(137, 12);
+            this.label28.TabIndex = 15;
+            this.label28.Text = "如果你的游戏账号忘记了";
             // 
-            // txtTitle
+            // lblAccountRecoveryStatusMsg
             // 
-            this.txtTitle.BackColor = System.Drawing.Color.YellowGreen;
-            this.txtTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTitle.Location = new System.Drawing.Point(10, 25);
-            this.txtTitle.Multiline = true;
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(432, 76);
-            this.txtTitle.TabIndex = 2;
+            this.lblAccountRecoveryStatusMsg.AutoSize = true;
+            this.lblAccountRecoveryStatusMsg.ForeColor = System.Drawing.Color.Yellow;
+            this.lblAccountRecoveryStatusMsg.Location = new System.Drawing.Point(174, 262);
+            this.lblAccountRecoveryStatusMsg.Name = "lblAccountRecoveryStatusMsg";
+            this.lblAccountRecoveryStatusMsg.Size = new System.Drawing.Size(0, 12);
+            this.lblAccountRecoveryStatusMsg.TabIndex = 14;
             // 
-            // label16
+            // txtRecoveryAccountEmail
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(7, 10);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(29, 12);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "标题";
-            // 
-            // btnSend
-            // 
-            this.btnSend.Location = new System.Drawing.Point(367, 266);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(75, 21);
-            this.btnSend.TabIndex = 0;
-            this.btnSend.Text = "发送";
-            this.btnSend.UseVisualStyleBackColor = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
-            // 
-            // lblRecoveryMsgStatus
-            // 
-            this.lblRecoveryMsgStatus.AutoSize = true;
-            this.lblRecoveryMsgStatus.ForeColor = System.Drawing.Color.Yellow;
-            this.lblRecoveryMsgStatus.Location = new System.Drawing.Point(136, 269);
-            this.lblRecoveryMsgStatus.Name = "lblRecoveryMsgStatus";
-            this.lblRecoveryMsgStatus.Size = new System.Drawing.Size(0, 12);
-            this.lblRecoveryMsgStatus.TabIndex = 14;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(21, 117);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(149, 12);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "注册游戏账号时用的邮箱：";
+            this.txtRecoveryAccountEmail.BackColor = System.Drawing.Color.YellowGreen;
+            this.txtRecoveryAccountEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRecoveryAccountEmail.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.txtRecoveryAccountEmail.Location = new System.Drawing.Point(198, 128);
+            this.txtRecoveryAccountEmail.MaxLength = 40;
+            this.txtRecoveryAccountEmail.Name = "txtRecoveryAccountEmail";
+            this.txtRecoveryAccountEmail.Size = new System.Drawing.Size(240, 21);
+            this.txtRecoveryAccountEmail.TabIndex = 13;
             // 
             // btnFindMyGameAccount
             // 
-            this.btnFindMyGameAccount.Location = new System.Drawing.Point(285, 165);
+            this.btnFindMyGameAccount.Location = new System.Drawing.Point(305, 175);
             this.btnFindMyGameAccount.Name = "btnFindMyGameAccount";
             this.btnFindMyGameAccount.Size = new System.Drawing.Size(131, 23);
             this.btnFindMyGameAccount.TabIndex = 2;
@@ -1044,85 +1044,130 @@
             this.btnFindMyGameAccount.UseVisualStyleBackColor = true;
             this.btnFindMyGameAccount.Click += new System.EventHandler(this.btnFindMyGameAccount_Click);
             // 
-            // txtRecoveryAccountEmail
+            // label27
             // 
-            this.txtRecoveryAccountEmail.BackColor = System.Drawing.Color.YellowGreen;
-            this.txtRecoveryAccountEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRecoveryAccountEmail.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtRecoveryAccountEmail.Location = new System.Drawing.Point(176, 115);
-            this.txtRecoveryAccountEmail.MaxLength = 40;
-            this.txtRecoveryAccountEmail.Name = "txtRecoveryAccountEmail";
-            this.txtRecoveryAccountEmail.Size = new System.Drawing.Size(240, 21);
-            this.txtRecoveryAccountEmail.TabIndex = 13;
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label27.Location = new System.Drawing.Point(41, 127);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(151, 15);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "注册游戏账号时用的邮箱：";
             // 
-            // lblAccountRecoveryStatusMsg
+            // tbFeedBack
             // 
-            this.lblAccountRecoveryStatusMsg.AutoSize = true;
-            this.lblAccountRecoveryStatusMsg.ForeColor = System.Drawing.Color.Yellow;
-            this.lblAccountRecoveryStatusMsg.Location = new System.Drawing.Point(71, 202);
-            this.lblAccountRecoveryStatusMsg.Name = "lblAccountRecoveryStatusMsg";
-            this.lblAccountRecoveryStatusMsg.Size = new System.Drawing.Size(0, 12);
-            this.lblAccountRecoveryStatusMsg.TabIndex = 14;
+            this.tbFeedBack.BackColor = System.Drawing.Color.SteelBlue;
+            this.tbFeedBack.Controls.Add(this.label19);
+            this.tbFeedBack.Controls.Add(this.label18);
+            this.tbFeedBack.Controls.Add(this.lblBlogs);
+            this.tbFeedBack.Controls.Add(this.lblRedmoonSite);
+            this.tbFeedBack.Controls.Add(this.lblGirhub);
+            this.tbFeedBack.Controls.Add(this.llBlogUrl);
+            this.tbFeedBack.Controls.Add(this.lblRedmoonUrl);
+            this.tbFeedBack.Controls.Add(this.llGirhubUrl);
+            this.tbFeedBack.Location = new System.Drawing.Point(4, 22);
+            this.tbFeedBack.Name = "tbFeedBack";
+            this.tbFeedBack.Padding = new System.Windows.Forms.Padding(3);
+            this.tbFeedBack.Size = new System.Drawing.Size(478, 288);
+            this.tbFeedBack.TabIndex = 6;
+            this.tbFeedBack.Text = "意见反馈";
             // 
-            // label28
+            // label19
             // 
-            this.label28.AllowDrop = true;
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label28.ForeColor = System.Drawing.Color.GreenYellow;
-            this.label28.Location = new System.Drawing.Point(16, 20);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(219, 24);
-            this.label28.TabIndex = 15;
-            this.label28.Text = "如果你的游戏账号忘记了";
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.ForeColor = System.Drawing.Color.Yellow;
+            this.label19.Location = new System.Drawing.Point(323, 223);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(105, 15);
+            this.label19.TabIndex = 16;
+            this.label19.Text = "QQ群：82108417";
             // 
-            // label29
+            // label18
             // 
-            this.label29.AllowDrop = true;
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label29.ForeColor = System.Drawing.Color.GreenYellow;
-            this.label29.Location = new System.Drawing.Point(16, 44);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(333, 24);
-            this.label29.TabIndex = 16;
-            this.label29.Text = "在下面输入注册游戏账号时使用的邮箱";
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label18.ForeColor = System.Drawing.Color.Yellow;
+            this.label18.Location = new System.Drawing.Point(293, 208);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(158, 15);
+            this.label18.TabIndex = 15;
+            this.label18.Text = "作者游戏ID：NewGeili_Null";
             // 
-            // label30
+            // lblBlogs
             // 
-            this.label30.AllowDrop = true;
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label30.ForeColor = System.Drawing.Color.GreenYellow;
-            this.label30.Location = new System.Drawing.Point(3, 57);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(466, 24);
-            this.label30.TabIndex = 18;
-            this.label30.Text = "在下面输入游戏账号和邮箱，找回的密码将发送到邮箱";
+            this.lblBlogs.AutoSize = true;
+            this.lblBlogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblBlogs.ForeColor = System.Drawing.Color.Yellow;
+            this.lblBlogs.Location = new System.Drawing.Point(66, 107);
+            this.lblBlogs.Name = "lblBlogs";
+            this.lblBlogs.Size = new System.Drawing.Size(67, 15);
+            this.lblBlogs.TabIndex = 5;
+            this.lblBlogs.Text = "作者博客：";
             // 
-            // label31
+            // lblRedmoonSite
             // 
-            this.label31.AllowDrop = true;
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label31.ForeColor = System.Drawing.Color.GreenYellow;
-            this.label31.Location = new System.Drawing.Point(3, 23);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(390, 24);
-            this.label31.TabIndex = 17;
-            this.label31.Text = "如果记得游戏账号和注册游戏账号使用的邮箱";
+            this.lblRedmoonSite.AutoSize = true;
+            this.lblRedmoonSite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblRedmoonSite.ForeColor = System.Drawing.Color.Yellow;
+            this.lblRedmoonSite.Location = new System.Drawing.Point(42, 140);
+            this.lblRedmoonSite.Name = "lblRedmoonSite";
+            this.lblRedmoonSite.Size = new System.Drawing.Size(91, 15);
+            this.lblRedmoonSite.TabIndex = 4;
+            this.lblRedmoonSite.Text = "美服红月官网：";
             // 
-            // label32
+            // lblGirhub
             // 
-            this.label32.AllowDrop = true;
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label32.ForeColor = System.Drawing.Color.GreenYellow;
-            this.label32.Location = new System.Drawing.Point(15, 74);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(295, 24);
-            this.label32.TabIndex = 17;
-            this.label32.Text = "游戏账号会发送到你输入的邮箱中";
+            this.lblGirhub.AutoSize = true;
+            this.lblGirhub.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblGirhub.ForeColor = System.Drawing.Color.Yellow;
+            this.lblGirhub.Location = new System.Drawing.Point(30, 73);
+            this.lblGirhub.Name = "lblGirhub";
+            this.lblGirhub.Size = new System.Drawing.Size(103, 15);
+            this.lblGirhub.TabIndex = 3;
+            this.lblGirhub.Text = "项目Github地址：";
+            // 
+            // llBlogUrl
+            // 
+            this.llBlogUrl.AutoSize = true;
+            this.llBlogUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.llBlogUrl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.llBlogUrl.LinkColor = System.Drawing.Color.Lime;
+            this.llBlogUrl.Location = new System.Drawing.Point(139, 107);
+            this.llBlogUrl.Name = "llBlogUrl";
+            this.llBlogUrl.Size = new System.Drawing.Size(217, 15);
+            this.llBlogUrl.TabIndex = 2;
+            this.llBlogUrl.TabStop = true;
+            this.llBlogUrl.Text = "http://www.cnblogs.com/shan333chao/";
+            this.llBlogUrl.Click += new System.EventHandler(this.feedBackUrl_Click);
+            // 
+            // lblRedmoonUrl
+            // 
+            this.lblRedmoonUrl.AutoSize = true;
+            this.lblRedmoonUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblRedmoonUrl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblRedmoonUrl.LinkColor = System.Drawing.Color.Lime;
+            this.lblRedmoonUrl.Location = new System.Drawing.Point(139, 140);
+            this.lblRedmoonUrl.Name = "lblRedmoonUrl";
+            this.lblRedmoonUrl.Size = new System.Drawing.Size(180, 15);
+            this.lblRedmoonUrl.TabIndex = 1;
+            this.lblRedmoonUrl.TabStop = true;
+            this.lblRedmoonUrl.Text = "http://www.redmoonclassic.com";
+            this.lblRedmoonUrl.Click += new System.EventHandler(this.feedBackUrl_Click);
+            // 
+            // llGirhubUrl
+            // 
+            this.llGirhubUrl.AutoSize = true;
+            this.llGirhubUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.llGirhubUrl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.llGirhubUrl.LinkColor = System.Drawing.Color.Lime;
+            this.llGirhubUrl.Location = new System.Drawing.Point(139, 73);
+            this.llGirhubUrl.Name = "llGirhubUrl";
+            this.llGirhubUrl.Size = new System.Drawing.Size(302, 15);
+            this.llGirhubUrl.TabIndex = 0;
+            this.llGirhubUrl.TabStop = true;
+            this.llGirhubUrl.Text = "https://github.com/shan333chao/RedmoonClassicTool";
+            this.llGirhubUrl.Click += new System.EventHandler(this.feedBackUrl_Click);
             // 
             // BithRecovery
             // 
@@ -1162,7 +1207,7 @@
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.DateTimePicker dtpBeginDay;
         private System.Windows.Forms.DateTimePicker dtpEndDay;
-        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblBitrhdayCrackStatusMsg;
         private System.Windows.Forms.TabControl tbRedmoonTools;
         private System.Windows.Forms.TabPage tbGetBirth;
         private System.Windows.Forms.TabPage tbAdd;
@@ -1211,18 +1256,11 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.LinkLabel lbStart;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblRegistNotice;
+        private System.Windows.Forms.Label lblBirthdayCrackNotice;
+        private System.Windows.Forms.Label lblShapeShitMsg;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.TabPage tbFeedBack;
-        private System.Windows.Forms.TextBox txtContent;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnReset;
@@ -1243,6 +1281,15 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label lblRegistStatusMsg;
+        private System.Windows.Forms.Label lblBlogs;
+        private System.Windows.Forms.Label lblRedmoonSite;
+        private System.Windows.Forms.Label lblGirhub;
+        private System.Windows.Forms.LinkLabel llBlogUrl;
+        private System.Windows.Forms.LinkLabel lblRedmoonUrl;
+        private System.Windows.Forms.LinkLabel llGirhubUrl;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
     }
 }
 
