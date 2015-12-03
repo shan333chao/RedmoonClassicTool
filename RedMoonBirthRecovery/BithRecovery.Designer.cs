@@ -114,6 +114,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             this.tbRedmoonTools.SuspendLayout();
             this.tbabout.SuspendLayout();
             this.tbAdd.SuspendLayout();
@@ -938,6 +939,7 @@
             // tbFindGamePassword
             // 
             this.tbFindGamePassword.BackColor = System.Drawing.Color.SteelBlue;
+            this.tbFindGamePassword.Controls.Add(this.label32);
             this.tbFindGamePassword.Controls.Add(this.label29);
             this.tbFindGamePassword.Controls.Add(this.label28);
             this.tbFindGamePassword.Controls.Add(this.lblAccountRecoveryStatusMsg);
@@ -1026,7 +1028,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(18, 99);
+            this.label27.Location = new System.Drawing.Point(21, 117);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(149, 12);
             this.label27.TabIndex = 0;
@@ -1034,7 +1036,7 @@
             // 
             // btnFindMyGameAccount
             // 
-            this.btnFindMyGameAccount.Location = new System.Drawing.Point(282, 147);
+            this.btnFindMyGameAccount.Location = new System.Drawing.Point(285, 165);
             this.btnFindMyGameAccount.Name = "btnFindMyGameAccount";
             this.btnFindMyGameAccount.Size = new System.Drawing.Size(131, 23);
             this.btnFindMyGameAccount.TabIndex = 2;
@@ -1047,7 +1049,7 @@
             this.txtRecoveryAccountEmail.BackColor = System.Drawing.Color.YellowGreen;
             this.txtRecoveryAccountEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRecoveryAccountEmail.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtRecoveryAccountEmail.Location = new System.Drawing.Point(173, 97);
+            this.txtRecoveryAccountEmail.Location = new System.Drawing.Point(176, 115);
             this.txtRecoveryAccountEmail.MaxLength = 40;
             this.txtRecoveryAccountEmail.Name = "txtRecoveryAccountEmail";
             this.txtRecoveryAccountEmail.Size = new System.Drawing.Size(240, 21);
@@ -1057,7 +1059,7 @@
             // 
             this.lblAccountRecoveryStatusMsg.AutoSize = true;
             this.lblAccountRecoveryStatusMsg.ForeColor = System.Drawing.Color.Yellow;
-            this.lblAccountRecoveryStatusMsg.Location = new System.Drawing.Point(68, 184);
+            this.lblAccountRecoveryStatusMsg.Location = new System.Drawing.Point(71, 202);
             this.lblAccountRecoveryStatusMsg.Name = "lblAccountRecoveryStatusMsg";
             this.lblAccountRecoveryStatusMsg.Size = new System.Drawing.Size(0, 12);
             this.lblAccountRecoveryStatusMsg.TabIndex = 14;
@@ -1082,9 +1084,9 @@
             this.label29.ForeColor = System.Drawing.Color.GreenYellow;
             this.label29.Location = new System.Drawing.Point(16, 44);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(390, 24);
+            this.label29.Size = new System.Drawing.Size(333, 24);
             this.label29.TabIndex = 16;
-            this.label29.Text = "你可以在下面输入注册游戏账号时使用的邮箱";
+            this.label29.Text = "在下面输入注册游戏账号时使用的邮箱";
             // 
             // label30
             // 
@@ -1109,6 +1111,18 @@
             this.label31.Size = new System.Drawing.Size(390, 24);
             this.label31.TabIndex = 17;
             this.label31.Text = "如果记得游戏账号和注册游戏账号使用的邮箱";
+            // 
+            // label32
+            // 
+            this.label32.AllowDrop = true;
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label32.ForeColor = System.Drawing.Color.GreenYellow;
+            this.label32.Location = new System.Drawing.Point(15, 74);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(295, 24);
+            this.label32.TabIndex = 17;
+            this.label32.Text = "游戏账号会发送到你输入的邮箱中";
             // 
             // BithRecovery
             // 
@@ -1228,6 +1242,7 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label32;
     }
 }
 
