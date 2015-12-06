@@ -28,3 +28,7 @@
 2015-12-3 添加了找回密码
 
 ![image](https://github.com/shan333chao/RedmoonClassicTool/blob/master/RedMoonBirthRecovery/ScreenShot/recoveryPass.png)
+
+2015-12-3 意见反馈
+
+![image](https://github.com/shan333chao/RedmoonClassicTool/blob/master/RedMoonBirthRecovery/ScreenShot/feedback.png)
