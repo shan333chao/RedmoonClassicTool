@@ -6,7 +6,7 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("美服红月帐号辅助工具beta2")]
+[assembly: AssemblyTitle("美服红月帐号辅助工具beta3")]
 [assembly: AssemblyDescription("创始人NewGeili_null")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("美服qq群:82108417")]
