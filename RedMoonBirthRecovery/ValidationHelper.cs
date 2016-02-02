@@ -24,7 +24,7 @@ namespace RedMoonBirthRecovery
             var isValid = Validator.TryValidateObject(t, context, result, true);
             if (!isValid)
             {
-                var errorCollection = result.Select(p => new ValidateMsgModel { fieldName = p.MemberNames.First(), errMsg = p.ErrorMessage });
+                var errorCollection = result.Select(p => new ValidateMsgModel { fieldName = p.MemberNames.FirstOrDefault(), errMsg = p.ErrorMessage });
                 errors = JsonConvert.SerializeObject(errorCollection);
                 return false;
             }
